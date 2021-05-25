@@ -19,9 +19,9 @@ class CentroModel
 
 
   function AgregarPedidomodel($nombre, $volumen){
-    $sentencia = $this->db->prepare( "insert into pedidos (nombre, volumen) values (?,?)");
+    $sentencia = $this->db->prepare( "INSERT INTO pedidos (id_usuario, volumen) VALUES (?,?)");
     $sentencia->execute(array($nombre,$volumen));
-    header(home);
+    //header(home);                                     REDIRECCIONAR
 
   }
 }

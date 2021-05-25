@@ -12,7 +12,7 @@ class CentroController{
   function __construct(){
     $this->view = new CentroView();
     $this->Titulo = "Cooperativa de Recuperadores Urbanos de Tandil";
-   // $this->model = new CentroModel();
+    $this->model = new CentroModel();
   }
 
   function Home(){
@@ -27,7 +27,7 @@ class CentroController{
 
   function AgregarPedido(){
     $nombre = $_POST["id"];
-    $horario = $_POST["volumen"];
+    $volumen = $_POST["volumen"];
     $this->model->AgregarPedidomodel($nombre,$volumen);
   }
 }

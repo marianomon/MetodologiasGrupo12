@@ -29,7 +29,7 @@
     <div class="contact-clean fondo">
         <form action="agregarPedido" method="post">
             <h2 class="text-center">Formulario de ciudadano</h2>
-            <div class=" hidden"><input class="form-control" type="radio" value="11254" checked="checked" class="hidden" name="id" ></div>
+            <div class=" hidden"><input class="form-control" type="radio" value="11254" checked="checked" class="hidden" name="id"></div>
             <div class="form-group form-horario"><p>Tamanio</p>
             <div class="form-group"><label for=""><input type="radio" checked="checked" value="1" class="radio-horario" type="text" name="volumen">menos de 1 metro²</label></div>
             <div class="form-group"><label for=""><input type="radio" value="2" class="radio-horario" type="text" name="volumen">entre 1 y 2 metros²</label></div>

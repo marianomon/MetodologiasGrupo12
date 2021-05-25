@@ -17,6 +17,7 @@ class ConfigApp
       'home'=> 'PelisController#Home',
 
       'generarPedidoRetiro' => 'CentroController#PedidoDeRetiro',
+      'agregarPedido' => 'CentroController#AgregarPedido',
 
       'LogIn'=> 'LoginController#login',
       'verificarLogin'=>'LoginController#verificarLogin',
