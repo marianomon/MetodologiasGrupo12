@@ -1,13 +1,13 @@
 <?php
 
 
-class PelisModel
+class CentroModel
 {
 
   function __construct()
   {
     $this->db = new PDO('mysql:host=localhost;'  ////MODIFICAR BASE DE DATOS
-    .'dbname=db_generos;charset=utf8'
+    .'dbname=centroAcopio;charset=utf8'
     , 'root', '');
   }
 
