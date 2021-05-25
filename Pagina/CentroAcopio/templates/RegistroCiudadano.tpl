@@ -17,11 +17,11 @@
     <section class="clean-block clean-form dark">
         <div class="container">
             <div class="block-heading">
-                <h2 class="text-info">Contact Us</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+                <h2 class="text-info">REGISTRO PARA CIUDADANO</h2>
+                <p>Ingrese sus datos en el siguiente formulario: </p>
             </div>
             <form>
-                <div class="form-group"><label>Name</label><input class="form-control" type="text" /></div>
+                <div class="form-group"><label>Nombre</label><input class="form-control" type="text" /></div>
                 <div class="form-group"><label>Apellido</label><input class="form-control" type="text" /></div>
                 <div class="form-group"><label>Email</label><input class="form-control" type="email" /></div>
                 <div class="form-group"><label>Contraseña</label><input class="form-control" type="password" /></div>
