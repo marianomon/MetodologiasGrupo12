@@ -13,8 +13,8 @@ class ConfigApp
     public static $ACTION = 'action';
     public static $PARAMS = 'params';
     public static $ACTIONS = [
-      ''=> 'PelisController#Home',
-      'home'=> 'PelisController#Home',
+      ''=> 'CentroController#Home',
+      'home'=> 'CentroController#Home',   ////////////////
 
       'generarPedidoRetiro' => 'CentroController#PedidoDeRetiro',
       'agregarPedido' => 'CentroController#AgregarPedido',
