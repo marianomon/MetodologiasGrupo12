@@ -1,4 +1,27 @@
+<?php
+/* Smarty version 3.1.33, created on 2021-05-25 21:34:26
+  from 'C:\xampp\htdocs\Proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\PedidoDeRetiro.tpl' */
 
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_60ad5142a38e41_57401722',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '758ff722f40627b0c26b2bbf349dcd0e568e9ad3' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\Proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\PedidoDeRetiro.tpl',
+      1 => 1621971232,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_60ad5142a38e41_57401722 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html>
 
@@ -42,11 +65,22 @@
         </form>
     </div>
     <main class="page landing-page"></main>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-    <script src="assets/js/smoothproducts.min.js"></script>
-    <script src="assets/js/theme.js"></script>
+    <?php echo '<script'; ?>
+ src="assets/js/jquery.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="assets/bootstrap/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="assets/js/smoothproducts.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="assets/js/theme.js"><?php echo '</script'; ?>
+>
 </body>
 
-</html>
+</html><?php }
+}
