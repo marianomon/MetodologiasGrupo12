@@ -16,7 +16,7 @@ class CentroController{
   }
 
   function Home(){
-    $Centro = $this->model->GetPeliculas(); //pedir materiales aceptados
+    $Centro = $this->model->GetMateriales(); //pedir materiales aceptados
     //$Generos = $this->GeneroModel->GetGeneros(); //aca podriamos pedir las noticias (en el proximo sprint)
     $this->view->Mostrar($this->Titulo, $Centro);
   }

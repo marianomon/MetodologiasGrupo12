@@ -9,6 +9,16 @@
       padding: 20px 0;
     }
   }
+
+  .bi-check-circle{
+    font-size: 30px;
+    position: absolute;
+    left: -20px;
+    top: 15px;
+    width: 30px;
+    text-align: center;
+    color: rgb(63, 200, 127);
+}
   
   .contact-clean form {
     max-width: 480px;

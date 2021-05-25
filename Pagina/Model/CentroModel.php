@@ -11,8 +11,8 @@ class CentroModel
     , 'root', '');
   }
 
-  function GetPeliculas(){
-    $sentencia = $this->db->prepare( "select * from pelicula");
+  function GetMateriales(){
+    $sentencia = $this->db->prepare( "select * from materiales");
     $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
@@ -21,7 +21,7 @@ class CentroModel
   function AgregarPedidomodel($nombre, $volumen){
     $sentencia = $this->db->prepare( "INSERT INTO pedidos (id_usuario, volumen) VALUES (?,?)");
     $sentencia->execute(array($nombre,$volumen));
-    //header(home);                                     REDIRECCIONAR
+    header(HOME);                                   
 
   }
 }
