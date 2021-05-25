@@ -27,17 +27,16 @@
         </div>
     </nav>
     <div class="contact-clean fondo">
-        <form action="index.html fondo" method="post">
+        <form action="agregarPedido" method="post">
             <h2 class="text-center">Formulario de ciudadano</h2>
-            <div class="form-group"><input class="form-control" type="text" name="name" placeholder="Nombre"></div>
-            <div class="form-group"><input class="form-control" type="text" name="apellido" placeholder="Apellido"></div>
-            <div class="form-group"><input class="form-control" type="text" name="direccion" placeholder="Direccion"></div>
+            <div class=" hidden"><input class="form-control" type="radio" value="11254" checked="checked" class="hidden" name="id" ></div>
             <div class="form-group form-horario"><p>Tamanio</p>
-            <div class="form-group"><label for=""><input type="radio" checked="checked" value="1" class="radio-horario" type="text" name="horario">menos de 1 metro²</label></div>
-            <div class="form-group"><label for=""><input type="radio" value="1" class="radio-horario" type="text" name="horario">entre 1 y 2 metros²</label></div>
-            <div class="form-group"><label for=""><input type="radio" value="1" class="radio-horario" type="text" name="horario">entre 2 y 4 metros²</label></div>
-            <div class="form-group"><label for=""><input type="radio" value="1" class="radio-horario" type="text" name="horario">mas de 4 metros²</label></div>
+            <div class="form-group"><label for=""><input type="radio" checked="checked" value="1" class="radio-horario" type="text" name="volumen">menos de 1 metro²</label></div>
+            <div class="form-group"><label for=""><input type="radio" value="2" class="radio-horario" type="text" name="volumen">entre 1 y 2 metros²</label></div>
+            <div class="form-group"><label for=""><input type="radio" value="3" class="radio-horario" type="text" name="volumen">entre 2 y 4 metros²</label></div>
+            <div class="form-group"><label for=""><input type="radio" value="4" class="radio-horario" type="text" name="volumen">mas de 4 metros²</label></div>
             </div>
+            <div class="form-group"><input type="file" id="files" name="imagenes" multiple></div>
             <div class="form-group"><button class="btn btn-primary" type="submit" style="background-color: rgb(5,218,116);">Enviar </button></div>
         </form>
     </div>

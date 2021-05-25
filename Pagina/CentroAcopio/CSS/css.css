@@ -199,6 +199,12 @@
     width: 100%;
   }
 
+  .hidden{
+      width: 0px;
+      height: 0px;
+      z-index: -10;
+  }
+
   .fondo{
     background-image: url("../Imagenes/Reciclaje.jpg");  
     background-size: cover;

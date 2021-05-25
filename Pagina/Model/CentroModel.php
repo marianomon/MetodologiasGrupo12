@@ -7,7 +7,7 @@ class CentroModel
   function __construct()
   {
     $this->db = new PDO('mysql:host=localhost;'
-    .'dbname=db_generos;charset=utf8'
+    .'dbname=centrodeacopio;charset=utf8'
     , 'root', '');
   }
 
@@ -15,6 +15,14 @@ class CentroModel
     $sentencia = $this->db->prepare( "select * from pelicula");
     $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+
+  function AgregarPedidomodel($nombre, $volumen){
+    $sentencia = $this->db->prepare( "insert into pedidos (nombre, volumen) values (?,?)");
+    $sentencia->execute(array($nombre,$volumen));
+    header(home);
+
   }
 }
 

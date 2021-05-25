@@ -15,18 +15,21 @@ class CentroController{
    // $this->model = new CentroModel();
   }
 
-function Home(){
+  function Home(){
     $Centro = $this->model->GetPeliculas(); //pedir materiales aceptados
     //$Generos = $this->GeneroModel->GetGeneros(); //aca podriamos pedir las noticias (en el proximo sprint)
     $this->view->Mostrar($this->Titulo, $Centro);
-}
+  }
 
-function PedidoDeRetiro(){
-  $this->view->PedidoDeRetiro($this->Titulo);
-}
+  function PedidoDeRetiro(){
+    $this->view->PedidoDeRetiro($this->Titulo);
+  }
 
-
-
+  function AgregarPedido(){
+    $nombre = $_POST["id"];
+    $horario = $_POST["volumen"];
+    $this->model->AgregarPedidomodel($nombre,$volumen);
+  }
 }
 
  ?>

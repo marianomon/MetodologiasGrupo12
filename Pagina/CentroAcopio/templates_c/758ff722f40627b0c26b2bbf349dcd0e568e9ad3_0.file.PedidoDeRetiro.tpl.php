@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2021-05-25 21:34:26
+/* Smarty version 3.1.33, created on 2021-05-25 22:32:10
   from 'C:\xampp\htdocs\Proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\PedidoDeRetiro.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_60ad5142a38e41_57401722',
+  'unifunc' => 'content_60ad5eca7673d2_48418787',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '758ff722f40627b0c26b2bbf349dcd0e568e9ad3' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\PedidoDeRetiro.tpl',
-      1 => 1621971232,
+      1 => 1621974615,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60ad5142a38e41_57401722 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60ad5eca7673d2_48418787 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,17 +50,16 @@ function content_60ad5142a38e41_57401722 (Smarty_Internal_Template $_smarty_tpl)
         </div>
     </nav>
     <div class="contact-clean fondo">
-        <form action="index.html fondo" method="post">
+        <form action="agregarPedido" method="post">
             <h2 class="text-center">Formulario de ciudadano</h2>
-            <div class="form-group"><input class="form-control" type="text" name="name" placeholder="Nombre"></div>
-            <div class="form-group"><input class="form-control" type="text" name="apellido" placeholder="Apellido"></div>
-            <div class="form-group"><input class="form-control" type="text" name="direccion" placeholder="Direccion"></div>
+            <div class=" hidden"><input class="form-control" type="radio" value="11254" checked="checked" class="hidden" name="id" ></div>
             <div class="form-group form-horario"><p>Tamanio</p>
-            <div class="form-group"><label for=""><input type="radio" checked="checked" value="1" class="radio-horario" type="text" name="horario">menos de 1 metro²</label></div>
-            <div class="form-group"><label for=""><input type="radio" value="1" class="radio-horario" type="text" name="horario">entre 1 y 2 metros²</label></div>
-            <div class="form-group"><label for=""><input type="radio" value="1" class="radio-horario" type="text" name="horario">entre 2 y 4 metros²</label></div>
-            <div class="form-group"><label for=""><input type="radio" value="1" class="radio-horario" type="text" name="horario">mas de 4 metros²</label></div>
+            <div class="form-group"><label for=""><input type="radio" checked="checked" value="1" class="radio-horario" type="text" name="volumen">menos de 1 metro²</label></div>
+            <div class="form-group"><label for=""><input type="radio" value="2" class="radio-horario" type="text" name="volumen">entre 1 y 2 metros²</label></div>
+            <div class="form-group"><label for=""><input type="radio" value="3" class="radio-horario" type="text" name="volumen">entre 2 y 4 metros²</label></div>
+            <div class="form-group"><label for=""><input type="radio" value="4" class="radio-horario" type="text" name="volumen">mas de 4 metros²</label></div>
             </div>
+            <div class="form-group"><input type="file" id="files" name="imagenes" multiple></div>
             <div class="form-group"><button class="btn btn-primary" type="submit" style="background-color: rgb(5,218,116);">Enviar </button></div>
         </form>
     </div>
