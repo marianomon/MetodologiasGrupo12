@@ -1,4 +1,4 @@
- <section class="clean-block features">
+ <section class="clean-block features dark">
             <div class="container">
                 <div class="block-heading">
                     <h2 class="text-info">¿Que Materiales Reciclamos y Como?</h2>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2021-05-26 01:05:22
+/* Smarty version 3.1.33, created on 2021-05-26 02:53:16
   from 'C:\xampp\htdocs\proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\sectionMateriales.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_60ad82b2a98e89_21530352',
+  'unifunc' => 'content_60ad9bfcc266d3_05776510',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '239207e2dfc2c3fe707580f723e1c7e61930d431' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\sectionMateriales.tpl',
-      1 => 1621983920,
+      1 => 1621990394,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60ad82b2a98e89_21530352 (Smarty_Internal_Template $_smarty_tpl) {
-?> <section class="clean-block features">
+function content_60ad9bfcc266d3_05776510 (Smarty_Internal_Template $_smarty_tpl) {
+?> <section class="clean-block features dark">
             <div class="container">
                 <div class="block-heading">
                     <h2 class="text-info">¿Que Materiales Reciclamos y Como?</h2>

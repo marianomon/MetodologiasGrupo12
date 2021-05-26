@@ -30,6 +30,14 @@ class CentroController{
     $volumen = $_POST["volumen"];
     $this->model->AgregarPedidomodel($nombre,$volumen);
   }
+
+  function MostrarLogin(){
+    $this->view->MostrarLogin($this->Titulo);
+  }
+
+  function MostrarRegistro(){
+    $this->view->MostrarRegistro($this->Titulo);
+  }
 }
 
  ?>
