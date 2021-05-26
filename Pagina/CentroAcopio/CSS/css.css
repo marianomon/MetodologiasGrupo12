@@ -10,16 +10,15 @@ body{
 
 .footer{
   width: 100%;
-  height: 40px;
   text-align: center;
   color: white;
   font-size: 15px;
   background-color: rgb(34 36 37);
+  bottom: 0;
+  position: relative;
 }
 
-.footer p{
-  padding-top: 10px;
-}
+
 
 .transparente{
   background-color: transparent !important;

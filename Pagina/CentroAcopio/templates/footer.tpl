@@ -1,5 +1,5 @@
 </main>
-    <footer class="page-footer dark" style="background-color: rgb(34 36 37);">
+    <footer class="page-footer dark footer" style="background-color: rgb(34 36 37);">
         <div class="footer-copyright">
             <p style="height: 12px;">© 2018 Cooperativa de Recuperadores Urbanos de Tandil</p>
         </div>
