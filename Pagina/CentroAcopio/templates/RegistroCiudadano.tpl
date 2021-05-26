@@ -1,13 +1,15 @@
 {include file="header.tpl"}
 {include file="navdeslog.tpl"}
+    //Barra de navegacion
     <main class="page contact-us-page">
-    <section class="clean-block clean-form dark">
+    <section class="clean-block clean-form">
         <div class="container">
-            <div class="block-heading">
-                <h2 class="text-info">REGISTRO PARA CIUDADANO</h2>
-                <p>Ingrese sus datos en el siguiente formulario: </p>
-            </div>
+            
             <form>
+                <div class="block-heading">
+                    <h2 class="text-info">REGISTRO PARA CIUDADANO</h2>
+                    <p>Ingrese sus datos en el siguiente formulario: </p>
+                </div>
                 <div class="form-group"><label>Nombre</label><input class="form-control" type="text" /></div>
                 <div class="form-group"><label>Apellido</label><input class="form-control" type="text" /></div>
                 <div class="form-group"><label>Email</label><input class="form-control" type="email" /></div>
@@ -23,5 +25,4 @@
         </div>
     </section>
 </main>
-</body>
-</html>
+{include file="footer.tpl"}

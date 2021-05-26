@@ -15,22 +15,14 @@ class CentroController{
     $this->model = new CentroModel();
   }
 
-function Home(){
-    $Centro = $this->model->GetPeliculas(); //pedir materiales aceptados
+  function Home(){
+    $Centro = $this->model->GetMateriales(); //pedir materiales aceptados
     //$Generos = $this->GeneroModel->GetGeneros(); //aca podriamos pedir las noticias (en el proximo sprint)
     $this->view->Mostrar($this->Titulo, $Centro);
-}
-
-
-
-<<<<<<< Updated upstream
-=======
-  function Registro(){
-    $this->view->Registro($this->Titulo);
   }
 
-  function Login(){
-    $this->view->MostrarLogin($this->Titulo);
+  function PedidoDeRetiro(){
+    $this->view->PedidoDeRetiro($this->Titulo);
   }
 
   function AgregarPedido(){
@@ -38,7 +30,14 @@ function Home(){
     $volumen = $_POST["volumen"];
     $this->model->AgregarPedidomodel($nombre,$volumen);
   }
->>>>>>> Stashed changes
+
+  function MostrarLogin(){
+    $this->view->MostrarLogin($this->Titulo);
+  }
+
+  function MostrarRegistro(){
+    $this->view->MostrarRegistro($this->Titulo);
+  }
 }
 
  ?>

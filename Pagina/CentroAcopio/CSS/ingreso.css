@@ -37,6 +37,8 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
+element.style {
+}
 
 .clean-block.dark {
   background-color: #f6f6f6;

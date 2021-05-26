@@ -1,22 +1,29 @@
 <?php
 
 
-class PelisModel
+class CentroModel
 {
 
   function __construct()
   {
-    $this->db = new PDO('mysql:host=localhost;'  ////MODIFICAR BASE DE DATOS
-    .'dbname=db_generos;charset=utf8'
+    $this->db = new PDO('mysql:host=localhost;'
+    .'dbname=centrodeacopio;charset=utf8'
     , 'root', '');
   }
 
-  /*function GetPeliculas(){   ACA PARA PEDIR LOS MATERIALES ACEPTADOS
-    $sentencia = $this->db->prepare( "select * from pelicula");
+  function GetMateriales(){
+    $sentencia = $this->db->prepare( "select * from materiales");
     $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
-  }*/ 
+  }
 
+
+  function AgregarPedidomodel($nombre, $volumen){
+    $sentencia = $this->db->prepare( "INSERT INTO pedidos (id_usuario, volumen) VALUES (?,?)");
+    $sentencia->execute(array($nombre,$volumen));
+    header(HOME);                                   
+
+  }
 }
 
 

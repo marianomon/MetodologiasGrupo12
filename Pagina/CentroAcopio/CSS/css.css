@@ -1,3 +1,9 @@
+body{
+  background-image: url("https://faro.travel/blog/wp-content/uploads/2019/05/Reciclaje-1024x682.jpg");
+  background-size: cover;
+
+}
+
 .contact-clean {
     background: #f1f7fc;
     padding: 80px 0;
@@ -205,14 +211,8 @@
   }
   
   html, body {
-    background-image: url("https://faro.travel/blog/wp-content/uploads/2019/05/Reciclaje-1024x682.jpg");
-    background-size: cover;
     height: 100%;
     width: 100%;
-  }
-
-  .login{
-    background-color: transparent;
   }
 
   .hidden{

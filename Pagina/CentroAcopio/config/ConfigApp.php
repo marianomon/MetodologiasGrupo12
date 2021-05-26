@@ -1,7 +1,7 @@
 <?php
 
 
-define('HOME', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+define('HOME', 'Location: http://'.$_SERVER["SERVER_NAME"] . ':'.$_SERVER['SERVER_PORT'] .dirname($_SERVER["PHP_SELF"]));
 define('HOMEADMIN', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/admin');
 define('LOGIN', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/LogIn');
 define('LOGOUT', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/LogOut');
@@ -14,14 +14,12 @@ class ConfigApp
     public static $PARAMS = 'params';
     public static $ACTIONS = [
       ''=> 'CentroController#Home',
-      'home'=> 'CentroController#Home',   ////////////////
-<<<<<<< Updated upstream
-=======
-      'Registrarse' => 'CentroController#Registro',
-      'Login' => 'CentroController#Login',
+      'home'=> 'CentroController#Home',
+      'Login'=> 'CentroController#MostrarLogin',
+      'Registrar'=> 'CentroController#MostrarRegistro',   ////////////////
+
       'generarPedidoRetiro' => 'CentroController#PedidoDeRetiro',
       'agregarPedido' => 'CentroController#AgregarPedido',
->>>>>>> Stashed changes
 
       'LogIn'=> 'LoginController#login',
       'verificarLogin'=>'LoginController#verificarLogin',
