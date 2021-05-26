@@ -19,33 +19,6 @@ class ConfigApp
       'generarPedidoRetiro' => 'CentroController#PedidoDeRetiro',
       'agregarPedido' => 'CentroController#AgregarPedido',
 
-      'LogIn'=> 'LoginController#login',
-      'verificarLogin'=>'LoginController#verificarLogin',
-      'LogOut'=>'AdminController#Logout',
-
-      'generoAdmin'=>'AdminController#GenerarGeneroAdmin',
-      'admin'=>'AdminController#PelisAdmin',
-
-      'ActualizarPelicula'=>'AdminController#ActualizarPelicula',
-
-      'FormularioAgregarPelicula'=>'AdminController#FormularioAgregarPelicula',
-      'AgregarPelicula'=>'AdminController#AgregarPelicula',
-
-      'borrar'=> 'AdminController#BorrarPelicula',
-
-      'PeliculaSeleccionada'=>'PelisController#PeliculaSeleccionada',
-      'PeliculaSeleccionadaAdmin'=>'AdminController#MostrarPeliculaAdmin',
-
-      'estrenos'=>'PelisController#MostrarEstrenos',
-      'estrenosadmin'=>'AdminController#MostrarEstrenosAdmin',
-
-      'genero'=> 'PelisController#GenerarGenero',
-      'borrarGenero'=>'AdminController#borrarGenero',
-
-      'FormularioAgregarGenero'=> 'AdminController#FormularioAgregarGenero',
-      'AgregarGenero'=> 'AdminController#AgregarGenero',
-      'FormularioEditarGenero'=> 'AdminController#FormularioEditarGenero',
-      'EditarGenero'=> 'AdminController#EditarGenero',
     ];
 }
 

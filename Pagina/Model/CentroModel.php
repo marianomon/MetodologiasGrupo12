@@ -1,13 +1,11 @@
 <?php
 
 
-class CentroModel
-{
+class CentroModel{
 
-  function __construct()
-  {
+  function __construct(){
     $this->db = new PDO('mysql:host=localhost;'
-    .'dbname=centrodeacopio;charset=utf8'
+    .'dbname=centroacopio;charset=utf8'
     , 'root', '');
   }
 
@@ -22,9 +20,9 @@ class CentroModel
     $sentencia = $this->db->prepare( "INSERT INTO pedidos (id_usuario, volumen) VALUES (?,?)");
     $sentencia->execute(array($nombre,$volumen));
     //header(home);                                     REDIRECCIONAR
+  }
 
   }
-}
 
 
  ?>

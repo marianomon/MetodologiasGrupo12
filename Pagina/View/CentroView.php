@@ -23,6 +23,6 @@ class CentroView
     $this->Smarty->display('templates/PedidoDeRetiro.tpl');
   }
 
-  
+    
 }
   ?>

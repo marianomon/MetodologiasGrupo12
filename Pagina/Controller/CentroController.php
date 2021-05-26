@@ -26,9 +26,18 @@ class CentroController{
   }
 
   function AgregarPedido(){
-    $nombre = $_POST["id"];
+    $random = rand(5, 15);
+    if($random%2==0){
+      $nombre = $_POST["id"];
     $volumen = $_POST["volumen"];
     $this->model->AgregarPedidomodel($nombre,$volumen);
+    }else{
+      echo'<script type="text/javascript">
+    alert("Su locacion esta demaciado lejos del centro de acopio");
+    window.location.href="generarPedidoRetiro";
+    </script>';
+    }
+    
   }
 }
 
