@@ -33,7 +33,7 @@ class CentroController{
     $this->model->AgregarPedidomodel($nombre,$volumen);
     }else{
       echo'<script type="text/javascript">
-    alert("Su locacion esta demaciado lejos del centro de acopio");
+    alert("Su locacion esta demaciado lejos del centro de acopio. Debera brindar sus materiales usted mismo/a");
     window.location.href="generarPedidoRetiro";
     </script>';
     }
