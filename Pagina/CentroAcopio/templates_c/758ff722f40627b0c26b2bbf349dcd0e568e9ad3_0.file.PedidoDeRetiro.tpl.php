@@ -1,4 +1,41 @@
-{include file="header.tpl"}
+<?php
+/* Smarty version 3.1.33, created on 2021-05-25 23:18:10
+  from 'C:\xampp\htdocs\Proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\PedidoDeRetiro.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_60ad69926a2132_77411853',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '758ff722f40627b0c26b2bbf349dcd0e568e9ad3' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\Proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\PedidoDeRetiro.tpl',
+      1 => 1621977483,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_60ad69926a2132_77411853 (Smarty_Internal_Template $_smarty_tpl) {
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Registro Ciudadano</title>
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
         <div class="container"><a class="navbar-brand logo" href="#">Cooperativa de Recuperadores Urbanos de Tandil<br></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div
@@ -26,4 +63,23 @@
             <div class="form-group"><button class="btn btn-primary" type="submit" style="background-color: rgb(5,218,116);">Enviar </button></div>
         </form>
     </div>
-{include file="footer.tpl"}
+    <main class="page landing-page"></main>
+    <?php echo '<script'; ?>
+ src="assets/js/jquery.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="assets/bootstrap/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="assets/js/smoothproducts.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="assets/js/theme.js"><?php echo '</script'; ?>
+>
+</body>
+
+</html><?php }
+}
