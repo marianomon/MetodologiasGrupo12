@@ -19,6 +19,11 @@ class LoginModel {
         $user = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $user;
     }
+
+    public function InsertarUsuario($nombre,$contraseña,$email,$direccion,$telefono,$horarioPreferencia,$apellido){
+        $sentencia = $this->db->prepare("INSERT INTO usuario(`nombre`, `contraseña`, `email`, `direccion`, `telefono`, `horarioPreferencia`, `apellido`) VALUES(?,?,?,?,?,?,?)");
+        $sentencia->execute(array($nombre,$contraseña,$email,$direccion,$telefono,$horarioPreferencia,$apellido));
+    }
 }
 
 ?>

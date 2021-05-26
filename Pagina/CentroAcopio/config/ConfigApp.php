@@ -2,9 +2,10 @@
 
 
 define('HOME', 'Location: http://'.$_SERVER["SERVER_NAME"] . ':'.$_SERVER['SERVER_PORT'] .dirname($_SERVER["PHP_SELF"]));
-define('HOMEADMIN', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/admin');
-define('LOGIN', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/LogIn');
-define('LOGOUT', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/LogOut');
+define('HOMECIUDADANO', 'Location: http://'.$_SERVER["SERVER_NAME"] . ':'.$_SERVER['SERVER_PORT'] . dirname($_SERVER["PHP_SELF"]). '/URL_CIUDADANO');
+define('HOMEADMIN', 'Location: http://'.$_SERVER["SERVER_NAME"] . ':'.$_SERVER['SERVER_PORT'] . dirname($_SERVER["PHP_SELF"]). '/admin');
+define('LOGIN', 'Location: http://'.$_SERVER["SERVER_NAME"] . ':'.$_SERVER['SERVER_PORT']  .dirname($_SERVER["PHP_SELF"]). '/Login');
+define('LOGOUT', 'Location: http://'.$_SERVER["SERVER_NAME"] . ':'.$_SERVER['SERVER_PORT'] . dirname($_SERVER["PHP_SELF"]). '/LogOut');
 
 
 class ConfigApp
@@ -15,39 +16,14 @@ class ConfigApp
     public static $ACTIONS = [
       ''=> 'CentroController#Home',
       'home'=> 'CentroController#Home',
-      'Login'=> 'CentroController#MostrarLogin',
-      'Registrar'=> 'CentroController#MostrarRegistro',   ////////////////
-
+      'Login'=> 'LoginController#MostrarLogin',
+      'Registrar'=> 'LoginController#DisplayRegistro', 
+      'registrarse'=> 'LoginController#registrarse',  ////////////////
       'generarPedidoRetiro' => 'CentroController#PedidoDeRetiro',
       'agregarPedido' => 'CentroController#AgregarPedido',
-
-      'LogIn'=> 'LoginController#login',
-      'verificarLogin'=>'LoginController#verificarLogin',
-      'LogOut'=>'AdminController#Logout',
-
-      'generoAdmin'=>'AdminController#GenerarGeneroAdmin',
-      'admin'=>'AdminController#PelisAdmin',
-
-      'ActualizarPelicula'=>'AdminController#ActualizarPelicula',
-
-      'FormularioAgregarPelicula'=>'AdminController#FormularioAgregarPelicula',
-      'AgregarPelicula'=>'AdminController#AgregarPelicula',
-
-      'borrar'=> 'AdminController#BorrarPelicula',
-
-      'PeliculaSeleccionada'=>'PelisController#PeliculaSeleccionada',
-      'PeliculaSeleccionadaAdmin'=>'AdminController#MostrarPeliculaAdmin',
-
-      'estrenos'=>'PelisController#MostrarEstrenos',
-      'estrenosadmin'=>'AdminController#MostrarEstrenosAdmin',
-
-      'genero'=> 'PelisController#GenerarGenero',
-      'borrarGenero'=>'AdminController#borrarGenero',
-
-      'FormularioAgregarGenero'=> 'AdminController#FormularioAgregarGenero',
-      'AgregarGenero'=> 'AdminController#AgregarGenero',
-      'FormularioEditarGenero'=> 'AdminController#FormularioEditarGenero',
-      'EditarGenero'=> 'AdminController#EditarGenero',
+      'iniciarSesion'=> 'LoginController#iniciarSesion',
+      'URL_CIUDADANO'=> 'CentroController#MostrarHomeUsuario',
+      'LogOut'=>'LoginController#Logout',
     ];
 }
 

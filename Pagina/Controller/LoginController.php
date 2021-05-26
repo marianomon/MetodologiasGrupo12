@@ -45,4 +45,20 @@ class LoginController {
         session_destroy();
         header("Location: " . Login);
     }
+
+    public function DisplayRegistro(){
+        $this->view->DisplayRegistro();
+    }
+    public function registrarse(){
+        $nombre=$_POST['nombre'];
+        $apellido=$_POST['apellido'];
+        $contraseña=$_POST['password'];
+        $email=$_POST['email'];
+        $direccion=$_POST['direccion'];
+        $telefono=$_POST['telefono'];
+        $horarioPreferencia=$_POST['horarioPreferencia'];
+        $hash = password_hash($contraseña,PASSWORD_DEFAULT);
+        $this->model->InsertarUsuario($nombre,$hash,$email,$direccion,$telefono,$horarioPreferencia,$apellido);
+        $this->iniciarSesion();
+    }
 }
