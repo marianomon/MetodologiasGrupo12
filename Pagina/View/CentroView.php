@@ -21,16 +21,11 @@ class CentroView
     $this->Smarty->assign('Titulo', $Titulo);
     $this->Smarty->display('templates/PedidoDeRetiro.tpl');
   }
-
-  function MostrarLogin($Titulo){
-    $this->Smarty->assign('Titulo', $Titulo);
-    $this->Smarty->display('templates/ingreso.tpl');
-  }
-
-  function MostrarRegistro($Titulo){
-    $this->Smarty->assign('Titulo', $Titulo);
-    $this->Smarty->display('templates/RegistroCiudadano.tpl');
-  }
+  public function MostrarHomeUsuario($Titulo,$Materiales){
+    $this->Smarty->assign('Titulo',$Titulo);
+    $this->Smarty->assign('materiales',$Materiales);
+    $this->Smarty->display('templates/homeUsuario.tpl');
+}
 
   
 }

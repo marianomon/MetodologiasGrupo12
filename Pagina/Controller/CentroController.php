@@ -25,19 +25,32 @@ class CentroController{
     $this->view->PedidoDeRetiro($this->Titulo);
   }
 
+  function MostrarHomeUsuario(){
+    $Centro = $this->model->GetMateriales();
+    $this->view->MostrarHomeUsuario($this->Titulo,$Centro);
+  }
+
   function AgregarPedido(){
-    $nombre = $_POST["id"];
+    session_start();
+    $id = $_SESSION["userId"];
     $volumen = $_POST["volumen"];
-    $this->model->AgregarPedidomodel($nombre,$volumen);
+    $this->model->AgregarPedido($id,$volumen);
+    $this->addImages($id);
+    //header(HOMECIUDADANO);
   }
 
-  function MostrarLogin(){
-    $this->view->MostrarLogin($this->Titulo);
-  }
-
-  function MostrarRegistro(){
-    $this->view->MostrarRegistro($this->Titulo);
-  }
+  function addImages($id){
+    if ($_FILES['image']['tmp_name'] == null){
+        header('Location: ' . generarPedidoRetiro);
+    }else{
+        if ($_FILES['image']['name']) {
+            if ($_FILES['image']['type'] == "image/jpeg" || $_FILES['image']['type'] == "image/jpg" || $_FILES['image']['type'] == "image/png") {
+                $this->model->addImages($id,$_FILES['image']);              
+            }
+        }
+    }
+    header('Location: ' . generarPedidoRetiro);
+}
 }
 
  ?>

@@ -1,47 +1,64 @@
 <?php
-
-require_once "../View/LoginView.php";
-require_once "../Model/LoginModel.php";
-
-
-
-
-class LoginController
-{
-
-  private $view;
-  private $model;
-  private $Titulo;
-
-  function __construct()
-  {
-    $this->view = new LoginView();
-    $this->model = new LoginModel();
-    $this->Titulo = "Login";
-  }
-
-function login(){
-  $this->view->mostrarLogin($this->Titulo);
-}
-
-function verificarLogin(){
-  $usuario = $_POST["usuario"];
-  $pass = $_POST["contrasenia"];
-  $db_usuario = $this->model->getUser($usuario);
-  
-  if (isset($db_usuario)) {
-    if (password_verify($pass, $db_usuario[0]["pass"])){
-      session_start();
-      $_SESSION["usuario"] = "$usuario";
-      header(HOMEADMIN);
-    }else {
-        $this->view->mostrarLogin($this->Titulo, "contrasenia incorrecta");
+require_once "config/ConfigApp.php";
+require_once "../Controller/CentroController.php";
+require_once "../Controller/AdminController.php";
+require_once "../model/LoginModel.php";
+require_once "../view/LoginView.php";
+class LoginController {
+    private $model;
+    private $view;
+    private $controller;
+    private $Titulo;
+	function __construct(){
+        $this->model = new LoginModel();
+        $this->view = new LoginView();
+        $this->Titulo = "Cooperativa de Recuperadores Urbanos de Tandil";
     }
-  }else {
-    echo "no hay usuario";
-  }
+    public function iniciarSesion(){
+        $password = $_POST['password'];
+        $usuario = $this->model->getPassword($_POST['email']);
+        if (isset($usuario) && password_verify($password,$usuario->contraseña)){
+            session_start();
+            $_SESSION['email'] = $usuario->email;
+            $_SESSION['userId'] = $usuario->id_usuario;
+            echo($usuario->isAdm);
+            if ($usuario->isAdm==1) {
+                header("Location: " . URL_ADMINISTRADOR );
+            }
+            elseif($usuario->isAdm==0) {
+                header("Location: " . URL_CIUDADANO);
+            }
+            elseif($usuario->isAdm==-1) {
+                header("Location: " . URL_CARTONERO);
+            }
+        }else{
+            header("Location: " . Login);
+        }
+    }
+    public function MostrarLogin(){
+        $this->view->DisplayLogin($this->Titulo);
+    }
 
-}
 
+    public function logout(){
+        session_start();
+        session_destroy();
+        header("Location: " . Login);
+    }
+
+    public function DisplayRegistro(){
+        $this->view->DisplayRegistro();
+    }
+    public function registrarse(){
+        $nombre=$_POST['nombre'];
+        $apellido=$_POST['apellido'];
+        $contraseña=$_POST['password'];
+        $email=$_POST['email'];
+        $direccion=$_POST['direccion'];
+        $telefono=$_POST['telefono'];
+        $horarioPreferencia=$_POST['horarioPreferencia'];
+        $hash = password_hash($contraseña,PASSWORD_DEFAULT);
+        $this->model->InsertarUsuario($nombre,$hash,$email,$direccion,$telefono,$horarioPreferencia,$apellido);
+        $this->iniciarSesion();
+    }
 }
- ?>
