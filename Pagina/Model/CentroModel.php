@@ -18,12 +18,25 @@ class CentroModel
   }
 
 
-  function AgregarPedidomodel($nombre, $volumen){
-    $sentencia = $this->db->prepare( "INSERT INTO pedidos (id_usuario, volumen) VALUES (?,?)");
+  function AgregarPedido($nombre, $volumen){
+    $sentencia = $this->db->prepare("INSERT INTO `pedidos`( `id_usuario`, `volumen`) VALUES (?,?)");
     $sentencia->execute(array($nombre,$volumen));
-    header(HOME);                                   
-
   }
+
+  private function uploadImage($image){
+    $target = "../CentroAcopio/Imagenes/" . uniqid() . "." . strtolower(pathinfo($image['name'], PATHINFO_EXTENSION));  
+    move_uploaded_file($image['tmp_name'], $target);
+    return $target;
+}
+
+  public function addImages($id,$image = null){
+    $pathImg = null;
+    $pathImg = $this->uploadImage($image);
+        if ($image){
+        $sentencia = $this->db->prepare("INSERT INTO imagen(id_usuario,direccion) VALUES(?,?)");
+        $sentencia->execute(array($id,$pathImg));
+    }
+}
 }
 
 
