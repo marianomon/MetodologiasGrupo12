@@ -18,6 +18,24 @@ class CentroView
     $this->Smarty->display('templates/home.tpl');
   }
 
+<<<<<<< Updated upstream
+=======
+  function PedidoDeRetiro($Titulo){
+    $this->Smarty->assign('Titulo', $Titulo);
+    $this->Smarty->display('templates/PedidoDeRetiro.tpl');
+  }
+
+  function Registro($Titulo){
+    $this->Smarty->assign('Titulo', $Titulo);
+    $this->Smarty->display('templates/RegistroCiudadano.tpl');
+  }
+
+  function MostrarLogin($Titulo){
+    $this->Smarty->assign('Titulo', $Titulo);
+    $this->Smarty->display('templates/ingreso.tpl');
+  }
+
+>>>>>>> Stashed changes
   
 }
   ?>

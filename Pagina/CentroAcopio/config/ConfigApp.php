@@ -15,6 +15,13 @@ class ConfigApp
     public static $ACTIONS = [
       ''=> 'CentroController#Home',
       'home'=> 'CentroController#Home',   ////////////////
+<<<<<<< Updated upstream
+=======
+      'Registrarse' => 'CentroController#Registro',
+      'Login' => 'CentroController#Login',
+      'generarPedidoRetiro' => 'CentroController#PedidoDeRetiro',
+      'agregarPedido' => 'CentroController#AgregarPedido',
+>>>>>>> Stashed changes
 
       'LogIn'=> 'LoginController#login',
       'verificarLogin'=>'LoginController#verificarLogin',

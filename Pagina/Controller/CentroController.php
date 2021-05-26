@@ -23,6 +23,22 @@ function Home(){
 
 
 
+<<<<<<< Updated upstream
+=======
+  function Registro(){
+    $this->view->Registro($this->Titulo);
+  }
+
+  function Login(){
+    $this->view->MostrarLogin($this->Titulo);
+  }
+
+  function AgregarPedido(){
+    $nombre = $_POST["id"];
+    $volumen = $_POST["volumen"];
+    $this->model->AgregarPedidomodel($nombre,$volumen);
+  }
+>>>>>>> Stashed changes
 }
 
  ?>
