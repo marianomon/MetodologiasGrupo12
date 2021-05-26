@@ -14,7 +14,9 @@ class ConfigApp
     public static $PARAMS = 'params';
     public static $ACTIONS = [
       ''=> 'CentroController#Home',
-      'home'=> 'CentroController#Home',   ////////////////
+      'home'=> 'CentroController#Home',
+      'Login'=> 'CentroController#MostrarLogin',
+      'Registrar'=> 'CentroController#MostrarRegistro',   ////////////////
 
       'generarPedidoRetiro' => 'CentroController#PedidoDeRetiro',
       'agregarPedido' => 'CentroController#AgregarPedido',
