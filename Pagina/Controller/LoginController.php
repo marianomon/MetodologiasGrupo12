@@ -1,47 +1,45 @@
 <?php
-
-require_once "../View/LoginView.php";
-require_once "../Model/LoginModel.php";
-
-
-
-
-class LoginController
-{
-
-  private $view;
-  private $model;
-  private $Titulo;
-
-  function __construct()
-  {
-    $this->view = new LoginView();
-    $this->model = new LoginModel();
-    $this->Titulo = "Login";
-  }
-
-function login(){
-  $this->view->mostrarLogin($this->Titulo);
-}
-
-function verificarLogin(){
-  $usuario = $_POST["usuario"];
-  $pass = $_POST["contrasenia"];
-  $db_usuario = $this->model->getUser($usuario);
-  
-  if (isset($db_usuario)) {
-    if (password_verify($pass, $db_usuario[0]["pass"])){
-      session_start();
-      $_SESSION["usuario"] = "$usuario";
-      header(HOMEADMIN);
-    }else {
-        $this->view->mostrarLogin($this->Titulo, "contrasenia incorrecta");
+require_once "./controller/SecuredController.php";
+require_once "./controller/AdminController.php";
+require_once "./model/SecuredController.php";
+require_once "./model/LoginModel.php";
+require_once "./view/LoginView.php";
+require_once "./view/CentroView.php";
+class LoginController {
+    private $model;
+    private $view;
+    private $controller;
+	function __construct(){
+        $this->model = new LoginModel();
+        $this->view = new LoginView();
     }
-  }else {
-    echo "no hay usuario";
-  }
-
+    public function iniciarSesion(){
+        $password = $_POST['password'];
+        $usuario = $this->model->getPassword($_POST['email']);
+        
+        if (isset($usuario) && password_verify($password,$usuario->contraseña)){
+            session_start();
+            $_SESSION['email'] = $usuario->email;
+            $_SESSION['userId'] = $usuario->id_usuario;
+            if ($usuario->isAdm==1) {
+                header("Location: " . URL_ADMINISTRADOR );
+            }
+            elseif($usuario->isAdm==0) {
+                header("Location: " . URL_CIUDADANO);
+            }
+            elseif($usuario->isAdm==-1) {
+                header("Location: " . URL_CARTONERO);
+            }
+        }else{
+            header("Location: " . URL_LOGIN);
+        }
+    }
+    public function login(){
+        $this->view->DisplayLogin();
+    }
+    public function logout(){
+        session_start();
+        session_destroy();
+        header("Location: " . URL_LOGIN);
+    }
 }
-
-}
- ?>

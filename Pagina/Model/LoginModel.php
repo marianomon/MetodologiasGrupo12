@@ -1,26 +1,22 @@
 <?php
 
-class LoginModel
-{
-
-  function __construct()
-  {
-    $this->db = new PDO('mysql:host=localhost;'    //MODIFICAR BBDD
-    .'dbname=db_generos;charset=utf8'
-    , 'root', '');
-  }
-
-  function GetGeneros(){                           //CAMBIAR NOMBRE DE FUNCION
-    $sentencia = $this->db->prepare( "select * from genero");
-    $sentencia->execute();
-    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
-  }
-
-  function getUser($usuario){                       
-    $sentencia = $this->db->prepare( "select * from usuario where nombre_usuario = ?");
-    $sentencia->execute(array($usuario));
-    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
-  }
+class LoginModel {
+    private $db;
+    function __construct(){
+        $this->db = new PDO('mysql:host=localhost;'.'dbname=centrodeacopio;charset=utf8', 'root', '');
+    }
+    public function GetPassword($user){
+        $sentencia = $this->db->prepare( "SELECT * FROM usuario WHERE usuario = ?");
+        $sentencia->execute(array($user));
+        $password = $sentencia->fetch(PDO::FETCH_OBJ);   
+        return $password;
+    }
+    public function GetUser($id_user){
+        $sentencia = $this->db->prepare("SELECT * FROM usuario where id_usuario = ?");
+        $sentencia->execute(array($id_user));
+        $user = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $user;
+    }
 }
 
- ?>
+?>
