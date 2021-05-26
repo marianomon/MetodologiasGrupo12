@@ -1,21 +1,22 @@
 <?php
-class LoginView {
-    private $Smarty;
 
-    function __construct()
-  {
+class LoginView
+{
+
+  private $Smarty;
+  function __construct(){
     $this->Smarty = new Smarty();
-  }
-    public function DisplayLogin(){
-        $this->Smarty->assign('Titulo',"Log-In");
-        $this->Smarty->display('templates/ingreso.tpl');
-    }
+    $this->Smarty->assign('root', "http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
 
-    public function DisplayRegistro(){
-      $this->Smarty->assign('Titulo',"Registro");
-      $this->Smarty->display('templates/RegistroCiudadano.tpl');
   }
-    
-    
+
+  function mostrarLogin($Titulo, $Generos, $Mensaje_Error=''){      //DEJE COMO EJEMPLO
+    $this->Smarty->assign('Titulo',$Titulo);
+    $this->Smarty->assign('Generos',$Generos);
+    $this->Smarty->assign('Mensaje_Error',$Mensaje_Error);
+    $this->Smarty->display('templates/LogIn.tpl');
+  }
+
+
 }
-?>
+ ?>

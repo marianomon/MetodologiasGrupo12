@@ -4,27 +4,6 @@ body{
 
 }
 
-.clean-block .block-heading {
-  padding-top: 10px !important;
-}
-
-.footer{
-  width: 100%;
-  height: 40px;
-  text-align: center;
-  color: white;
-  font-size: 15px;
-  background-color: rgb(34 36 37);
-}
-
-.footer p{
-  padding-top: 10px;
-}
-
-.transparente{
-  background-color: transparent !important;
-}
-
 .contact-clean {
     background: #f1f7fc;
     padding: 80px 0;

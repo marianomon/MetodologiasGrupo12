@@ -4,9 +4,9 @@
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="generarPedidoRetiro">Retiros</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{$BASE_URL}retiros">Retiros</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="{$BASE_URL}ofertas">Ofertas</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="LogOut">Salir</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{$BASE_URL}salir">Salir</a></li>
                 </ul>
             </div>
         </div>
