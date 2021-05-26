@@ -1,18 +1,30 @@
 <?php
+<<<<<<< Updated upstream
 /* Smarty version 3.1.33, created on 2021-05-26 01:54:27
+=======
+/* Smarty version 3.1.33, created on 2021-05-26 02:23:03
+>>>>>>> Stashed changes
   from 'C:\xampp\htdocs\proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
+<<<<<<< Updated upstream
   'unifunc' => 'content_60ad8e33869a72_60739652',
+=======
+  'unifunc' => 'content_60ad94e7494de7_20992393',
+>>>>>>> Stashed changes
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3621bf078b5439f2dd8f271be31072c0eff9d789' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\header.tpl',
+<<<<<<< Updated upstream
       1 => 1621986859,
+=======
+      1 => 1621988575,
+>>>>>>> Stashed changes
       2 => 'file',
     ),
   ),
@@ -20,7 +32,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
+<<<<<<< Updated upstream
 function content_60ad8e33869a72_60739652 (Smarty_Internal_Template $_smarty_tpl) {
+=======
+function content_60ad94e7494de7_20992393 (Smarty_Internal_Template $_smarty_tpl) {
+>>>>>>> Stashed changes
 ?><!DOCTYPE html>
 <html>
 
