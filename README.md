@@ -9,3 +9,5 @@ La carpeta "Criterio de DONE" contiene un documento de texto donde se plantea el
 La carpeta "Presentacion" contiene una presentacion sobre el WarmUp del 12/5.
 
 La carpeta "Pagina" contiene todo el codigo fuente de la pagina web.
+
+La carpeta "Testeos" contiene los testing de cada sprint.
