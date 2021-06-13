@@ -19,7 +19,7 @@ function load(){
 function activarOverlay(){  
     overlay.classList.add('active');
     popup.classList.add('active');
-    document.querySelector('#idMaterial').value = this.value;
+    document.querySelector('.idMaterial').value = this.value;
 }
 
 

@@ -27,9 +27,9 @@
     <h2>Editar material</h2>
     <form action="editarMaterial" method="POST">
       <div class="contenedor-inputs">
-        <input type="text" class="form-control" id="nombreMaterial" placeholder="Nombre material">
-        <input type="text" name="" class="form-control" id="descripcionMaterial" rows="3" placeholder="Descripcion">
-        <input type="number" class="form-control" id="idMaterial" class="idMaterial">
+        <input type="text" class="form-control" name="nombreMaterial" placeholder="Nombre material">
+        <input type="text" class="form-control" name="descripcionMaterial" rows="3" placeholder="Descripcion">
+        <input type="number" class="form-control idMaterial" name="idMaterial" >
         <button type="submit" class="btn btn-success mb-3">Editar datos</button>
       </div>
     </form>

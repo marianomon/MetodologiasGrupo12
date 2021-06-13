@@ -28,6 +28,11 @@ class CentroModel
     $sentencia->execute(array($nombre,$desc));
   }
 
+  function EditarMaterial($nombre,$descripcion,$id){
+    $sentencia = $this->db->prepare( "UPDATE materiales set nombre = ?, descripcion = ? where id_material=?");
+    $sentencia->execute(array($nombre,$descripcion,$id));
+  }
+
   function BorrarMaterial($id){
     $sentencia = $this->db->prepare("DELETE from materiales where id_material=?");
     $sentencia->execute(array($id));

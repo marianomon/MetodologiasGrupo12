@@ -23,6 +23,7 @@ class ConfigApp
       'agregarPedido' => 'CentroController#AgregarPedido',
       'agregarMaterial' => 'CentroController#AgregarMaterial',
       'borrarMaterial' => 'CentroController#BorrarMaterial',
+      'editarMaterial' => 'CentroController#EditarMaterial',
       'iniciarSesion'=> 'LoginController#iniciarSesion',
       'URL_CIUDADANO'=> 'CentroController#MostrarHomeUsuario',
       'URL_ADMINISTRADOR'=> 'CentroController#MostrarHomeAdmin',
