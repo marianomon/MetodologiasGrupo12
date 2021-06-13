@@ -11,9 +11,15 @@ class LoginView {
         $this->Smarty->display('templates/ingreso.tpl');
     }
 
-    public function DisplayRegistro(){
-      $this->Smarty->assign('Titulo',"Registro");
-      $this->Smarty->display('templates/RegistroCiudadano.tpl');
+
+  public function DisplayRegistroCiudadano(){
+    $this->Smarty->assign('Titulo',"Registro");
+    $this->Smarty->display('templates/RegistroCiudadano.tpl');
+  }
+
+  public function DisplayRegistroCartonero(){
+    $this->Smarty->assign('Titulo',"Registro");
+    $this->Smarty->display('templates/RegistroCartonero.tpl');
   }
     
     

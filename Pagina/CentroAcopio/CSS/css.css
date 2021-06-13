@@ -8,6 +8,7 @@ body{
   padding-top: 10px !important;
 }
 
+
 .footer{
   width: 100%;
   text-align: center;
@@ -15,7 +16,8 @@ body{
   font-size: 15px;
   background-color: rgb(34 36 37);
   bottom: 0;
-  position: relative;
+  position: fixed;
+
 }
 
 

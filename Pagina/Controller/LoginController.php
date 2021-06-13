@@ -45,10 +45,15 @@ class LoginController {
         session_destroy();
         header("Location: " . Login);
     }
-
-    public function DisplayRegistro(){
-        $this->view->DisplayRegistro();
+    
+    public function DisplayRegistroCiudadano(){
+        $this->view->DisplayRegistroCiudadano();
     }
+
+    public function DisplayRegistroCartonero(){
+        $this->view->DisplayRegistroCartonero();
+    }
+
     public function registrarse(){
         $nombre=$_POST['nombre'];
         $apellido=$_POST['apellido'];

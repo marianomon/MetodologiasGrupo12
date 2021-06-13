@@ -17,8 +17,9 @@ class ConfigApp
       ''=> 'CentroController#Home',
       'home'=> 'CentroController#Home',
       'Login'=> 'LoginController#MostrarLogin',
-      'Registrar'=> 'LoginController#DisplayRegistro', 
-      'registrarse'=> 'LoginController#registrarse',  ////////////////
+      'registrarCiudadano' => 'LoginController#DisplayRegistroCiudadano',
+      'registrarCartonero' => 'LoginController#DisplayRegistroCartonero',
+      'registrarse'=> 'LoginController#registrarse',  
       'generarPedidoRetiro' => 'CentroController#PedidoDeRetiro',
       'agregarPedido' => 'CentroController#AgregarPedido',
       'iniciarSesion'=> 'LoginController#iniciarSesion',
