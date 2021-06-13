@@ -39,10 +39,10 @@
 
 <div class="agregarMateriales">
     <h2>Agregar material</h2>
-    <form action="agregarMaterial" method="POST">
+    <form action="agregarMaterial" method="post">
       <div class="contenedor-inputs">
-        <input type="text" class="form-control" id="nombreMaterialAgregar" placeholder="Nombre material">
-        <input type="text" name="" class="form-control" id="descripcionMaterialAgregar" rows="3" placeholder="Descripcion">
+        <input type="text" class="form-control nombreMaterialAgregar" name="nombreMaterialAgregar" placeholder="Nombre material">
+        <input type="text" class="form-control descripcionAgregar" name="descripcionAgregar" rows="3" placeholder="Descripcion">
         <button type="submit" class="btn btn-success mb-3">Agregar</button>
       </div>
     </form>

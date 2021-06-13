@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2021-06-13 07:16:34
+/* Smarty version 3.1.33, created on 2021-06-13 08:41:54
   from 'C:\xampp\htdocs\proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\materialesAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_60c594b2362c18_01550258',
+  'unifunc' => 'content_60c5a8b24f71e1_98888970',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '630a3d272db4abff0bc3ed76dfa1acfaf282fced' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\materialesAdmin.tpl',
-      1 => 1623561390,
+      1 => 1623566324,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60c594b2362c18_01550258 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60c5a8b24f71e1_98888970 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:navAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -78,10 +78,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 <div class="agregarMateriales">
     <h2>Agregar material</h2>
-    <form action="agregarMaterial" method="POST">
+    <form action="agregarMaterial" method="post">
       <div class="contenedor-inputs">
-        <input type="text" class="form-control" id="nombreMaterialAgregar" placeholder="Nombre material">
-        <input type="text" name="" class="form-control" id="descripcionMaterialAgregar" rows="3" placeholder="Descripcion">
+        <input type="text" class="form-control nombreMaterialAgregar" name="nombreMaterialAgregar" placeholder="Nombre material">
+        <input type="text" class="form-control descripcionAgregar" name="descripcionAgregar" rows="3" placeholder="Descripcion">
         <button type="submit" class="btn btn-success mb-3">Agregar</button>
       </div>
     </form>

@@ -39,6 +39,14 @@ class CentroController{
     //header(HOMECIUDADANO);
   }
 
+  function AgregarMaterial(){
+    $nombre = $_POST["nombreMaterialAgregar"];
+    $descripcion = $_POST['descripcionAgregar'];
+    echo($descripcion);
+    $this->model->AgregarMaterial($nombre,$descripcion);
+    header(HOMEADMIN);
+  }
+
   function MostrarHomeAdmin(){
     $materiales = $this->model->GetMateriales(); //pedir materiales aceptados
    // $Generos = $this->GeneroModel->GetGeneros();//aca podriamos pedir las noticias (en el proximo sprint)

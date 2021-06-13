@@ -21,6 +21,7 @@ class ConfigApp
       'registrarse'=> 'LoginController#registrarse',  ////////////////
       'generarPedidoRetiro' => 'CentroController#PedidoDeRetiro',
       'agregarPedido' => 'CentroController#AgregarPedido',
+      'agregarMaterial' => 'CentroController#AgregarMaterial',
       'iniciarSesion'=> 'LoginController#iniciarSesion',
       'URL_CIUDADANO'=> 'CentroController#MostrarHomeUsuario',
       'URL_ADMINISTRADOR'=> 'CentroController#MostrarHomeAdmin',
