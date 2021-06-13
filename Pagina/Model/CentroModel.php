@@ -28,6 +28,11 @@ class CentroModel
     $sentencia->execute(array($nombre,$desc));
   }
 
+  function BorrarMaterial($id){
+    $sentencia = $this->db->prepare("DELETE from materiales where id_material=?");
+    $sentencia->execute(array($id));
+    }
+
   private function uploadImage($image){
     $target = "../CentroAcopio/Imagenes/" . uniqid() . "." . strtolower(pathinfo($image['name'], PATHINFO_EXTENSION));  
     move_uploaded_file($image['tmp_name'], $target);

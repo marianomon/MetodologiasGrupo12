@@ -15,7 +15,7 @@
     <tr>
             <td>{$Material['nombre']}</td>
             <td>{$Material['descripcion']}</td>
-            <td><a class = "btn btn-outline-danger" value={$Material['id_material']} href="borrarMaterial" id="{$Material['id_material']}">Borrar</a></td>
+            <td><a class = "btn btn-outline-danger" href="borrarMaterial/{$Material['id_material']}" id="{$Material['id_material']}">Borrar</a></td>
             <td><button type="button" class="btn btn-outline-light editar" id="btn-editar" value={$Material['id_material']} >Editar</button></td>
     </tr>
     {/foreach}

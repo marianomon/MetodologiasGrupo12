@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2021-06-13 08:41:54
+/* Smarty version 3.1.33, created on 2021-06-13 08:58:14
   from 'C:\xampp\htdocs\proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\materialesAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_60c5a8b24f71e1_98888970',
+  'unifunc' => 'content_60c5ac8605d170_90081123',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '630a3d272db4abff0bc3ed76dfa1acfaf282fced' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\materialesAdmin.tpl',
-      1 => 1623566324,
+      1 => 1623567490,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60c5a8b24f71e1_98888970 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60c5ac8605d170_90081123 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:navAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -48,8 +48,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['Material']->value) {
 </td>
             <td><?php echo $_smarty_tpl->tpl_vars['Material']->value['descripcion'];?>
 </td>
-            <td><a class = "btn btn-outline-danger" value=<?php echo $_smarty_tpl->tpl_vars['Material']->value['id_material'];?>
- href="borrarMaterial" id="<?php echo $_smarty_tpl->tpl_vars['Material']->value['id_material'];?>
+            <td><a class = "btn btn-outline-danger" href="borrarMaterial/<?php echo $_smarty_tpl->tpl_vars['Material']->value['id_material'];?>
+" id="<?php echo $_smarty_tpl->tpl_vars['Material']->value['id_material'];?>
 ">Borrar</a></td>
             <td><button type="button" class="btn btn-outline-light editar" id="btn-editar" value=<?php echo $_smarty_tpl->tpl_vars['Material']->value['id_material'];?>
  >Editar</button></td>

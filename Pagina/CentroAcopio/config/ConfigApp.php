@@ -22,6 +22,7 @@ class ConfigApp
       'generarPedidoRetiro' => 'CentroController#PedidoDeRetiro',
       'agregarPedido' => 'CentroController#AgregarPedido',
       'agregarMaterial' => 'CentroController#AgregarMaterial',
+      'borrarMaterial' => 'CentroController#BorrarMaterial',
       'iniciarSesion'=> 'LoginController#iniciarSesion',
       'URL_CIUDADANO'=> 'CentroController#MostrarHomeUsuario',
       'URL_ADMINISTRADOR'=> 'CentroController#MostrarHomeAdmin',
