@@ -1,25 +1,53 @@
 {include file="header.tpl"}
 {include file="navAdmin.tpl"}
-
-<h2 class="titTabla">Materiales acetados</h2>
-<table class="table table-dark table-striped">
+<div class="container-xxl materialesAdmin">
+  <h2 class="titTabla">Materiales acetados</h2>
+  <table class="table table-dark table-striped tablaMateriales">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Material</th>
       <th scope="col">descripcion</th>
-      <th scope="col">Handle</th>
+      <th scope="col" colspan="2">Opciones</th>
     </tr>
   </thead>
   <tbody>
   {foreach from=$materiales item=Material}
     <tr>
-            <th scope="row">{$Material['id_material']}</th>
             <td>{$Material['nombre']}</td>
             <td>{$Material['descripcion']}</td>
-            <td><button type="button" class="btn btn-outline-danger" id="borrar" value={$Material['id_material']}>Borrar</button></td>
+            <td><a class = "btn btn-outline-danger" value={$Material['id_material']} href="borrarMaterial" id="{$Material['id_material']}">Borrar</a></td>
+            <td><button type="button" class="btn btn-outline-light editar" id="btn-editar" value={$Material['id_material']} >Editar</button></td>
     </tr>
     {/foreach}
   </tbody>
 </table>
+<div class="overlay" id="overlay">
+  <div class="popup" id="popup">
+    <a href="#" class="btn-cerrar-popup"id="btn-cerrar-popup"><i class="bi bi-x-circle"></i></a>
+    <h2>Editar material</h2>
+    <form action="editarMaterial" method="POST">
+      <div class="contenedor-inputs">
+        <input type="text" class="form-control" id="nombreMaterial" placeholder="Nombre material">
+        <input type="text" name="" class="form-control" id="descripcionMaterial" rows="3" placeholder="Descripcion">
+        <input type="number" class="form-control" id="idMaterial" class="idMaterial">
+        <button type="submit" class="btn btn-success mb-3">Editar datos</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<div class="agregarMateriales">
+    <h2>Agregar material</h2>
+    <form action="agregarMaterial" method="POST">
+      <div class="contenedor-inputs">
+        <input type="text" class="form-control" id="nombreMaterialAgregar" placeholder="Nombre material">
+        <input type="text" name="" class="form-control" id="descripcionMaterialAgregar" rows="3" placeholder="Descripcion">
+        <button type="submit" class="btn btn-success mb-3">Agregar</button>
+      </div>
+    </form>
+  </div>
+
+<script src="./js/main.js"></script>
+
 {include file="footer.tpl"}

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2021-06-13 01:22:45
+/* Smarty version 3.1.33, created on 2021-06-13 07:16:34
   from 'C:\xampp\htdocs\proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\materialesAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_60c541c51239d6_87538397',
+  'unifunc' => 'content_60c594b2362c18_01550258',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '630a3d272db4abff0bc3ed76dfa1acfaf282fced' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\materialesAdmin.tpl',
-      1 => 1623539877,
+      1 => 1623561390,
       2 => 'file',
     ),
   ),
@@ -23,19 +23,18 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60c541c51239d6_87538397 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60c594b2362c18_01550258 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:navAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-
-<h2 class="titTabla">Materiales acetados</h2>
-<table class="table table-dark table-striped">
+<div class="container-xxl materialesAdmin">
+  <h2 class="titTabla">Materiales acetados</h2>
+  <table class="table table-dark table-striped tablaMateriales">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Material</th>
       <th scope="col">descripcion</th>
-      <th scope="col">Handle</th>
+      <th scope="col" colspan="2">Opciones</th>
     </tr>
   </thead>
   <tbody>
@@ -45,14 +44,15 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['Material']->value) {
 ?>
     <tr>
-            <th scope="row"><?php echo $_smarty_tpl->tpl_vars['Material']->value['id_material'];?>
-</th>
             <td><?php echo $_smarty_tpl->tpl_vars['Material']->value['nombre'];?>
 </td>
             <td><?php echo $_smarty_tpl->tpl_vars['Material']->value['descripcion'];?>
 </td>
-            <td><button type="button" class="btn btn-outline-danger" id="borrar" value=<?php echo $_smarty_tpl->tpl_vars['Material']->value['id_material'];?>
->Borrar</button></td>
+            <td><a class = "btn btn-outline-danger" value=<?php echo $_smarty_tpl->tpl_vars['Material']->value['id_material'];?>
+ href="borrarMaterial" id="<?php echo $_smarty_tpl->tpl_vars['Material']->value['id_material'];?>
+">Borrar</a></td>
+            <td><button type="button" class="btn btn-outline-light editar" id="btn-editar" value=<?php echo $_smarty_tpl->tpl_vars['Material']->value['id_material'];?>
+ >Editar</button></td>
     </tr>
     <?php
 }
@@ -60,6 +60,37 @@ foreach ($_from as $_smarty_tpl->tpl_vars['Material']->value) {
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
   </tbody>
 </table>
+<div class="overlay" id="overlay">
+  <div class="popup" id="popup">
+    <a href="#" class="btn-cerrar-popup"id="btn-cerrar-popup"><i class="bi bi-x-circle"></i></a>
+    <h2>Editar material</h2>
+    <form action="editarMaterial" method="POST">
+      <div class="contenedor-inputs">
+        <input type="text" class="form-control" id="nombreMaterial" placeholder="Nombre material">
+        <input type="text" name="" class="form-control" id="descripcionMaterial" rows="3" placeholder="Descripcion">
+        <input type="number" class="form-control" id="idMaterial" class="idMaterial">
+        <button type="submit" class="btn btn-success mb-3">Editar datos</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<div class="agregarMateriales">
+    <h2>Agregar material</h2>
+    <form action="agregarMaterial" method="POST">
+      <div class="contenedor-inputs">
+        <input type="text" class="form-control" id="nombreMaterialAgregar" placeholder="Nombre material">
+        <input type="text" name="" class="form-control" id="descripcionMaterialAgregar" rows="3" placeholder="Descripcion">
+        <button type="submit" class="btn btn-success mb-3">Agregar</button>
+      </div>
+    </form>
+  </div>
+
+<?php echo '<script'; ?>
+ src="./js/main.js"><?php echo '</script'; ?>
+>
+
 <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
 }
