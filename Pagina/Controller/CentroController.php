@@ -30,6 +30,19 @@ class CentroController{
     $this->view->MostrarHomeUsuario($this->Titulo,$Centro);
   }
 
+  function MostrarBalanza(){
+    $Materiales = $this->model->GetMateriales();
+    $this->view->MostrarBalanza($this->Titulo, $Materiales);
+  }
+
+  function SubirBalanza(){
+    session_start();
+    $id = $_SESSION["userId"];
+    $material = $_POST["material"];
+    $peso = $_POST['kg'];
+    $this->model->AgregarMaterialBalanza($material,$peso, $id);
+  }
+
   function AgregarPedido(){
     session_start();
     $id = $_SESSION["userId"];
@@ -42,7 +55,6 @@ class CentroController{
   function AgregarMaterial(){
     $nombre = $_POST["nombreMaterialAgregar"];
     $descripcion = $_POST['descripcionAgregar'];
-    echo($descripcion);
     $this->model->AgregarMaterial($nombre,$descripcion);
     header(HOMEADMIN);
   }

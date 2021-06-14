@@ -17,6 +17,11 @@ class CentroModel
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  function AgregarMaterialBalanza($material,$peso, $id){
+    $sentencia = $this->db->prepare("INSERT INTO `materialesRecogidos`( `idMaterial`, `cantidad`, `idUsuario`) VALUES (?,?,?)");
+    $sentencia->execute(array($nombre,$volumen, $id));
+  }
+
 
   function AgregarPedido($nombre, $volumen){
     $sentencia = $this->db->prepare("INSERT INTO `pedidos`( `id_usuario`, `volumen`) VALUES (?,?)");

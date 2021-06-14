@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2021-06-13 21:05:02
+/* Smarty version 3.1.33, created on 2021-06-14 22:13:48
   from 'C:\xampp\htdocs\Proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_60c656deac14f9_47523295',
+  'unifunc' => 'content_60c7b87c022300_07380783',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cab43b2d625049d584a87b35d5b15912f8564c9e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\header.tpl',
-      1 => 1623611027,
+      1 => 1623701626,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60c656deac14f9_47523295 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60c7b87c022300_07380783 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
