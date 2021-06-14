@@ -15,10 +15,6 @@ body{
 
 }
 
-.form-select::placeholder{
-  opacity: 0.3;
-}
-
 .materialesAdmin {
   background-color: #769056 !important;
   height: auto;

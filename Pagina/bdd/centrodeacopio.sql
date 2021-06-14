@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-06-2021 a las 01:11:00
+-- Tiempo de generación: 15-06-2021 a las 01:17:41
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
@@ -56,12 +56,23 @@ CREATE TABLE `materiales` (
 --
 
 INSERT INTO `materiales` (`id_material`, `nombre`, `descripcion`) VALUES
-(1, 'Papel', 'Debe estar seco y apilado.'),
 (2, 'Cartón', 'Debe estar seco, limpias, apilado y sin cintas adhesivas pegadas.'),
 (3, 'Envases Plasticos', 'Deben estar limpios y aplastados.'),
 (4, 'Botellas de Vidrio', 'Deben estar secas y limpias.'),
 (5, 'Latas de Aluminio y de Conserva', 'Deben estar secas, limpias y aplastadas.'),
 (6, 'Tetrabrik', 'Deben estar limpios y aplastados.');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `materialesrecogidos`
+--
+
+CREATE TABLE `materialesrecogidos` (
+  `idMaterial` int(11) NOT NULL,
+  `idUsuario` int(11) NOT NULL,
+  `cantidad` decimal(10,0) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -101,17 +112,21 @@ CREATE TABLE `usuario` (
   `dni` int(200) NOT NULL,
   `fechaNacimiento` date NOT NULL,
   `apellido` text NOT NULL,
-  `isAdm` int(200) NOT NULL DEFAULT 0
+  `isAdm` int(200) NOT NULL DEFAULT 0,
+  `activo` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id_usuario`, `nombre`, `contraseña`, `email`, `direccion`, `telefono`, `horarioPreferencia`, `vehiculo`, `dni`, `fechaNacimiento`, `apellido`, `isAdm`) VALUES
-(1, 'Mariano', '$2y$10$.8YcAbmR8ewzTu3s1ekctOdfFw82un.jfGMfIuOsTNiXlnvUq.jYi', 'marian@gmail.com', 'brasil 1982', 2147483647, 1, '', 0, '0000-00-00', 'montero', 0),
-(8, 'ivan', '$2y$10$L2NhaeAc8oAQ2o76dHGP7eOnjsdWVVmg32QXzxsyw29s3fSWLdVs6', 'ivan@gmail.com', 'Basilico 1740', 2147483647, 1, '', 0, '0000-00-00', 'Samudio', 0),
-(9, 'Lina', '$2y$10$d96ACd1aVIm4.Bs6XEj09O1diXIG3v7iqxqhNAShbTV9ihTOHMasq', 'secretaria@gmail.com', 'el paso 125', 257368989, 0, '', 12345678, '0000-00-00', 'lasecretaria', 1);
+INSERT INTO `usuario` (`id_usuario`, `nombre`, `contraseña`, `email`, `direccion`, `telefono`, `horarioPreferencia`, `vehiculo`, `dni`, `fechaNacimiento`, `apellido`, `isAdm`, `activo`) VALUES
+(1, 'Mariano', '$2y$10$.8YcAbmR8ewzTu3s1ekctOdfFw82un.jfGMfIuOsTNiXlnvUq.jYi', 'marian@gmail.com', 'brasil 1982', 2147483647, 1, '', 0, '0000-00-00', 'montero', 0, 0),
+(8, 'ivan', '$2y$10$L2NhaeAc8oAQ2o76dHGP7eOnjsdWVVmg32QXzxsyw29s3fSWLdVs6', 'ivan@gmail.com', 'Basilico 1740', 2147483647, 1, '', 0, '0000-00-00', 'Samudio', 0, 0),
+(9, 'Lina', '$2y$10$d96ACd1aVIm4.Bs6XEj09O1diXIG3v7iqxqhNAShbTV9ihTOHMasq', 'secretaria@gmail.com', 'el paso 125', 257368989, 0, '', 12345678, '0000-00-00', 'lasecretaria', 1, 0),
+(11, 'jesu', '$2y$10$fQJ83bSMpRaUqKhL3llVbOUwgRlwWqTZfzUiBdqg8liQq.VVZjAsG', '', 'venezuela', 0, 0, '', 0, '2000-07-22', 'locss', -1, 0),
+(12, 'jesu', '$2y$10$vqpp58Jqhq8jpDIJLqkz/OC4tX9ZzUwYNRaHu9773zuprSZMLT84S', '', 'venezuela', 0, 0, '', 0, '2000-07-22', 'locss', -1, 0),
+(13, 'jesu', '$2y$10$2tb9KE3zWGs6r4oo/7Ia.eL0Lh8yhjFT6icAhpJ6a2cwRWaT9ZbHO', '', 'venezuela', 0, 0, '', 41099436, '2000-07-22', 'locss', -1, 0);
 
 --
 -- Índices para tablas volcadas
@@ -128,6 +143,13 @@ ALTER TABLE `imagen`
 --
 ALTER TABLE `materiales`
   ADD PRIMARY KEY (`id_material`);
+
+--
+-- Indices de la tabla `materialesrecogidos`
+--
+ALTER TABLE `materialesrecogidos`
+  ADD KEY `idMaterial` (`idMaterial`),
+  ADD KEY `idUsuario` (`idUsuario`);
 
 --
 -- Indices de la tabla `pedidos`
@@ -162,7 +184,7 @@ ALTER TABLE `pedidos`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_usuario` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Restricciones para tablas volcadas
@@ -173,6 +195,13 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `imagen`
   ADD CONSTRAINT `imagen_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `materialesrecogidos`
+--
+ALTER TABLE `materialesrecogidos`
+  ADD CONSTRAINT `materialesrecogidos_ibfk_1` FOREIGN KEY (`idMaterial`) REFERENCES `materiales` (`id_material`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `materialesrecogidos_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `pedidos`
