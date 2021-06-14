@@ -24,6 +24,11 @@ class LoginModel {
         $sentencia = $this->db->prepare("INSERT INTO usuario(`nombre`, `contraseña`, `email`, `direccion`, `telefono`, `horarioPreferencia`, `apellido`) VALUES(?,?,?,?,?,?,?)");
         $sentencia->execute(array($nombre,$contraseña,$email,$direccion,$telefono,$horarioPreferencia,$apellido));
     }
+
+    public function InsertarUsuarioCart($nombre,$contraseña,$direccion,$nacimiento,$apellido,$userType,$dni){
+        $sentencia = $this->db->prepare("INSERT INTO usuario(`nombre`, `contraseña`, `direccion`, `fechaNacimiento`, `apellido`, `isAdm`, dni) VALUES(?,?,?,?,?,?,?)");
+        $sentencia->execute(array($nombre,$contraseña,$direccion,$nacimiento,$apellido,$userType, $dni));
+    }
 }
 
 ?>

@@ -66,4 +66,17 @@ class LoginController {
         $this->model->InsertarUsuario($nombre,$hash,$email,$direccion,$telefono,$horarioPreferencia,$apellido);
         $this->iniciarSesion();
     }
+
+    public function registrarseCartonero(){
+        $nombre=$_POST['nombre'];
+        $apellido=$_POST['apellido'];
+        $contraseña=$_POST['password'];
+        $direccion=$_POST['direccion'];
+        $nacimiento=$_POST['nacimiento'];
+        $dni=$_POST['dni'];
+        $userType=-1;
+        $hash = password_hash($contraseña,PASSWORD_DEFAULT);
+        $this->model->InsertarUsuarioCart($nombre,$hash,$direccion,$nacimiento,$apellido,$userType,$dni);
+        $this->iniciarSesion();
+    }
 }

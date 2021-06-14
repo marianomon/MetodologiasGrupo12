@@ -39,6 +39,37 @@ class CentroController{
     //header(HOMECIUDADANO);
   }
 
+  function AgregarMaterial(){
+    $nombre = $_POST["nombreMaterialAgregar"];
+    $descripcion = $_POST['descripcionAgregar'];
+    echo($descripcion);
+    $this->model->AgregarMaterial($nombre,$descripcion);
+    header(HOMEADMIN);
+  }
+
+  function EditarMaterial(){
+    $nombre = $_POST["nombreMaterial"];
+    $descripcion = $_POST['descripcionMaterial'];
+    $id = $_POST['idMaterial'];
+    $this->model->EditarMaterial($nombre,$descripcion,$id);
+    header(HOMEADMIN);
+  }
+
+  function BorrarMaterial($param){
+    $this->model->BorrarMaterial($param[0]);
+    header(HOMEADMIN);
+  }
+
+  
+
+  function MostrarHomeAdmin(){
+    $materiales = $this->model->GetMateriales(); //pedir materiales aceptados
+   // $Generos = $this->GeneroModel->GetGeneros();//aca podriamos pedir las noticias (en el proximo sprint)
+    $this->view->MostrarHomeAdmin($this->Titulo, $materiales);
+  }
+
+
+
   function addImages($id){
     if ($_FILES['image']['tmp_name'] == null){
         header('Location: ' . generarPedidoRetiro);

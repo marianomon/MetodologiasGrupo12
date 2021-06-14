@@ -25,7 +25,12 @@ class CentroView
     $this->Smarty->assign('Titulo',$Titulo);
     $this->Smarty->assign('materiales',$Materiales);
     $this->Smarty->display('templates/homeUsuario.tpl');
-}
+  }
+  public function MostrarHomeAdmin($Titulo,$Materiales){
+    $this->Smarty->assign('Titulo',$Titulo);
+    $this->Smarty->assign('materiales',$Materiales);
+    $this->Smarty->display('templates/materialesAdmin.tpl');
+  }
 
   
 }

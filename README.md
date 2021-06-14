@@ -2,12 +2,17 @@
 Github del Trabajo Practico Especial de la materia: Introducción a las Metodologías de Desarrollo de Software.
 
 
-La carpeta "Capturas" contiene capturas de pantalla de la pagina web en desarrollo.
+1.La carpeta "Pagina" contiene todo el codigo fuente de la pagina web.
 
-La carpeta "Criterio de DONE" contiene un documento de texto donde se plantea el Criterio de DONE.
+2.La carpeta "Documentacion" contiene:
 
-La carpeta "Presentacion" contiene una presentacion sobre el WarmUp del 12/5.
+  A. La carpeta "Prototipos" contiene:
+       -imagenes del proyecto en sus inicios con los bocetos en media fidelidad.
 
-La carpeta "Pagina" contiene todo el codigo fuente de la pagina web.
+  B. La carpeta "Criterio de DONE" contiene un documento de texto donde se plantea el Criterio de DONE.
 
-La carpeta "Testeos" contiene los testing de cada sprint.
+  C. La carpeta "Presentaciones" contiene las presentacion del warmup, spring 1,spring2,y spring3.
+
+  D. La carpeta "Testeos" contiene:
+ 	-Documentos de texto que verifican el testeo de cada incidencia chequeando que el criterio de aceptacion se cumpla.
+	-Video por cada sprint realizado mostrando la funcionalidad añadida.
