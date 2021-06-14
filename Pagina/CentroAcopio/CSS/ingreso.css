@@ -2,8 +2,7 @@
   background-image: url("https://faro.travel/blog/wp-content/uploads/2019/05/Reciclaje-1024x682.jpg");
 }
 
-element.style {
-}
+
 
 @media (min-width:576px) {
   .clean-navbar.fixed-top + .page {
