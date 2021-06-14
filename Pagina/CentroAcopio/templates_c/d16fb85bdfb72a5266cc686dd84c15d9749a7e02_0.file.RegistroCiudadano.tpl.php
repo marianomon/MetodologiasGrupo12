@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2021-05-26 07:01:24
+/* Smarty version 3.1.33, created on 2021-06-14 22:42:08
   from 'C:\xampp\htdocs\proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\RegistroCiudadano.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_60add6248863e0_37694102',
+  'unifunc' => 'content_60c7bf20c7a3f6_58835712',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd16fb85bdfb72a5266cc686dd84c15d9749a7e02' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\RegistroCiudadano.tpl',
-      1 => 1622005282,
+      1 => 1623701911,
       2 => 'file',
     ),
   ),
@@ -23,11 +23,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60add6248863e0_37694102 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60c7bf20c7a3f6_58835712 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:navdeslog.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-    //Barra de navegacion
     <main class="page contact-us-page">
     <section class="clean-block clean-form">
         <div class="container">

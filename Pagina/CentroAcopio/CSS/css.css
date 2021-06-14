@@ -1,7 +1,45 @@
 body{
   background-image: url("https://faro.travel/blog/wp-content/uploads/2019/05/Reciclaje-1024x682.jpg");
   background-size: cover;
+}
 
+.navDisc{
+  width: 100% important;
+  background-color: red;
+  height: 60px;
+}
+
+
+
+
+.fondoMain{
+  width: 100%;
+  height: 700px;
+  background-image: url("https://faro.travel/blog/wp-content/uploads/2019/05/Reciclaje-1024x682.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  
+}
+
+.fondoMain .difuminado{
+  background-color: rgba(0, 0, 0, .5);
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.fondoMain .difuminado h2{
+  padding-top: 18%;
+  font-weight: 800;
+  color: white;
+  font-style: italic;
+  text-shadow: 5px 5px black;
+}
+
+.fondoMain .difuminado p{
+  padding-top: 2px;
+  color: white;
+  text-shadow: 2px 1px black;
 }
 
 .clean-block .block-heading {

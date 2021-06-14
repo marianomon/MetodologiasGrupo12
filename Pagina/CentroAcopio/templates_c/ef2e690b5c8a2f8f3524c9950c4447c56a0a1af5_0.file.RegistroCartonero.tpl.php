@@ -1,5 +1,32 @@
-{include file="header.tpl"}
-{include file="navdeslog.tpl"}
+<?php
+/* Smarty version 3.1.33, created on 2021-06-14 22:42:03
+  from 'C:\xampp\htdocs\proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\RegistroCartonero.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_60c7bf1bba8313_91785745',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'ef2e690b5c8a2f8f3524c9950c4447c56a0a1af5' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\RegistroCartonero.tpl',
+      1 => 1623701898,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:header.tpl' => 1,
+    'file:navdeslog.tpl' => 1,
+    'file:footer.tpl' => 1,
+  ),
+),false)) {
+function content_60c7bf1bba8313_91785745 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+$_smarty_tpl->_subTemplateRender("file:navdeslog.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
     <main class="page contact-us-page">
     <section class="clean-block clean-form">
         <div class="container">
@@ -22,4 +49,6 @@
         </div>
     </section>
 </main>
-{include file="footer.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
+}

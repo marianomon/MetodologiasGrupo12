@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2021-05-26 02:45:31
+/* Smarty version 3.1.33, created on 2021-06-14 22:14:59
   from 'C:\xampp\htdocs\proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\ingreso.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_60ad9a2bd1c584_44703950',
+  'unifunc' => 'content_60c7b8c3cd8c72_54660127',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10e317c71d70423ff0d895aa96b0e3d5882042c9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\ingreso.tpl',
-      1 => 1621989916,
+      1 => 1623701691,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60ad9a2bd1c584_44703950 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60c7b8c3cd8c72_54660127 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:navdeslog.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -44,6 +44,7 @@ $_smarty_tpl->_subTemplateRender("file:navdeslog.tpl", $_smarty_tpl->cache_id, $
             </form>
         </div>
     </section>
+</main>
 <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 

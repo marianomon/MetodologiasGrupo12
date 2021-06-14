@@ -14,4 +14,4 @@
                 {/foreach}
                 </div>
             </div>
-        </section>
+    </section>

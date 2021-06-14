@@ -1,6 +1,5 @@
 {include file="header.tpl"}
 {include file="navdeslog.tpl"}
-    //Barra de navegacion
     <main class="page contact-us-page">
     <section class="clean-block clean-form">
         <div class="container">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2021-06-13 01:56:28
+/* Smarty version 3.1.33, created on 2021-06-14 22:38:18
   from 'C:\xampp\htdocs\proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_60c549ac928e71_19043974',
+  'unifunc' => 'content_60c7be3ac09221_52268135',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3621bf078b5439f2dd8f271be31072c0eff9d789' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\header.tpl',
-      1 => 1623542177,
+      1 => 1623703065,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60c549ac928e71_19043974 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60c7be3ac09221_52268135 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -42,5 +42,6 @@ function content_60c549ac928e71_19043974 (Smarty_Internal_Template $_smarty_tpl)
     
 </head>
 
-<body><?php }
+<body>
+<div class="navDisc"></div><?php }
 }

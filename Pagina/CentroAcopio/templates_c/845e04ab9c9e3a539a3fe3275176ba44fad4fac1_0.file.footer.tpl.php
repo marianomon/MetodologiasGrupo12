@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2021-05-26 09:01:02
+/* Smarty version 3.1.33, created on 2021-06-14 22:38:18
   from 'C:\xampp\htdocs\proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_60adf22ef22731_51863650',
+  'unifunc' => 'content_60c7be3ac7e633_74080262',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '845e04ab9c9e3a539a3fe3275176ba44fad4fac1' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\footer.tpl',
-      1 => 1622012371,
+      1 => 1623703015,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,47 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60adf22ef22731_51863650 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60c7be3ac7e633_74080262 (Smarty_Internal_Template $_smarty_tpl) {
 ?></main>
-    <footer class="page-footer dark" style="background-color: rgb(34 36 37);">
-        <div class="footer-copyright">
-            <p style="height: 12px;">© 2018 Cooperativa de Recuperadores Urbanos de Tandil</p>
-        </div>
-    </footer>
+    <!-- Footer -->
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/CooperativaRecuperadoresTandil/" role="button"
+        ><i class="bi bi-facebook"></i></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://cooperativarecuperadorestandil@gmail.com" role="button"
+        ><i class="bi bi-google"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/marianomon/MetodologiasGrupo12/tree/main" role="button"
+        ><i class="bi bi-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+    <!-- Section: Text -->
+    <section class="mb-4">
+      <p>
+        La Cooperativa de Recuperadores de Tandil es un grupo de recicladores 
+        que nos organizamos para darle valor a los residuos que generamos día a día en Tandil
+      </p>
+    </section>
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2021 Copyright:
+    <a class="text-white" href="https://www.facebook.com/CooperativaRecuperadoresTandil/">MTE-Recuperadores</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
     <?php echo '<script'; ?>
  src="assets/js/jquery.min.js"><?php echo '</script'; ?>
 >
@@ -41,6 +75,9 @@ function content_60adf22ef22731_51863650 (Smarty_Internal_Template $_smarty_tpl)
 >
     <?php echo '<script'; ?>
  src="assets/js/theme.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"><?php echo '</script'; ?>
 >
 </body>
 
