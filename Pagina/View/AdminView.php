@@ -9,8 +9,7 @@ class AdminView {
     }
 
     public function DisplayProductsId($Pedidos){
-        $this->Smarty->assign('titulo',"Pedidos");
-        $this->Smarty->assign('BASE_URL',BASE_URL);
+        $this->Smarty->assign('Titulo',"Pedidos");
         $this->Smarty->assign('list_Pedidos',$Pedidos);
         $this->Smarty->display('templates/PedidosADM.tpl');
     }

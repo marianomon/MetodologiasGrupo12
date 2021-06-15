@@ -1,6 +1,4 @@
 <?php
-require_once "../View/CentroView.php";
-require_once "../Model/CentroModel.php";
 require_once "SecuredController.php";
 require_once "../Model/AdminModel.php";
 require_once "../View/AdminView.php";
@@ -13,13 +11,13 @@ class AdminController extends SecuredController{
   function __construct(){
     parent::__construct();
 
-    $this->view = new CentroView();
+    $this->view = new AdminView();
     $this->Titulo = "Bienvenido Administrador!!";
-    $this->model = new CentroModel();
+    $this->model = new AdminModel();
   }
   public function GetPedidos(){
     $Pedidos = $this->model->GetPedidosJoin();
-    $this->view->DisplayPedidos($Pedidos);  
+    $this->view->DisplayProductsId($Pedidos);  
   }
 }
 ?>
