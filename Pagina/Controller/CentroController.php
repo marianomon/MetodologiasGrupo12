@@ -80,6 +80,13 @@ class CentroController{
     $this->view->MostrarHomeAdmin($this->Titulo, $materiales);
   }
 
+  function ObtenerMatAportados(){
+    session_start();
+    $materialesAport = $this->model->GetMaterialesAportados($_SESSION["userId"]);
+    $materiales = $this->model->GetMateriales();
+    $this->view->MostrarMatAportados($this->Titulo, $materiales, $materialesAport);
+  }
+
   function addImages($id){
     if ($_FILES['image']['tmp_name'] == null){
         header('Location: ' . generarPedidoRetiro);

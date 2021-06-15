@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2021-06-15 01:27:02
+/* Smarty version 3.1.33, created on 2021-06-15 02:52:52
   from 'C:\xampp\htdocs\Proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_60c7e5c6ebb2e0_35947661',
+  'unifunc' => 'content_60c7f9e45c2283_72197363',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fe10464fc5e751d745df5f46763a766f271fecbe' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\footer.tpl',
-      1 => 1623713199,
+      1 => 1623718351,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60c7e5c6ebb2e0_35947661 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60c7f9e45c2283_72197363 (Smarty_Internal_Template $_smarty_tpl) {
 ?></main>
     <!-- Footer -->
 <footer class="bg-dark text-center text-white">
@@ -61,6 +61,9 @@ function content_60c7e5c6ebb2e0_35947661 (Smarty_Internal_Template $_smarty_tpl)
   <!-- Copyright -->
 </footer>
 <!-- Footer -->
+    <?php echo '<script'; ?>
+ src="./js/main.js"><?php echo '</script'; ?>
+>
     <?php echo '<script'; ?>
  src="assets/js/jquery.min.js"><?php echo '</script'; ?>
 >

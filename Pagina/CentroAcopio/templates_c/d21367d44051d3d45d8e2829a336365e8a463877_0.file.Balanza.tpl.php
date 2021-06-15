@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2021-06-15 02:31:14
+/* Smarty version 3.1.33, created on 2021-06-15 02:46:51
   from 'C:\xampp\htdocs\Proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\Balanza.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_60c7f4d26bebc3_67434566',
+  'unifunc' => 'content_60c7f87b1be4c1_81111149',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd21367d44051d3d45d8e2829a336365e8a463877' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\Balanza.tpl',
-      1 => 1623717072,
+      1 => 1623717261,
       2 => 'file',
     ),
   ),
@@ -23,14 +23,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60c7f4d26bebc3_67434566 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60c7f87b1be4c1_81111149 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:navBalanza.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <main class="page contact-us-page">
     <section class="clean-block clean-form">
         <div class="container">
-            
             <form action="subirBalanza" method="post">
                 <div class="block-heading">
                     <h2 class="text-info">INGRESE MATERIALES</h2>
