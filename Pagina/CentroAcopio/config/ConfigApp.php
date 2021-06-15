@@ -36,6 +36,7 @@ class ConfigApp
       'mostrarUsuarios'=>'CentroController#mostrarUsuarios',
       'borrarUsuario' => 'CentroController#BorrarUsuario',
       'aceptarUsuario' => 'CentroController#aceptarUsuario',
+      'editarUsuario' => 'CentroController#EditarUsuario',
     ];
 }
 

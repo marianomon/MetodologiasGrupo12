@@ -67,6 +67,17 @@ class CentroController{
     header(HOMEADMIN);
   }
 
+
+  function EditarUsuario(){
+    $nombre = $_POST["nombre"];
+    $apellido = $_POST['apellido'];
+    $direccion = $_POST['direccion'];
+    $contraseña = $_POST['password'];
+    $id = $_POST['idUsuario'];
+    $this->model->EditarUsuario($nombre,$apellido,$id,$direccion,$contraseña);
+    header(LISTAUSUARIOS);
+  }
+
   function BorrarMaterial($param){
     $this->model->BorrarMaterial($param[0]);
     header(HOMEADMIN);

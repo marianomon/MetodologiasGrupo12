@@ -34,14 +34,16 @@
   </tbody>
 </table>
 <div class="overlay" id="overlay">
-  <div class="popup" id="popup">
+  <div class="popup formEditar" id="popup">
     <a href="#" class="btn-cerrar-popup"id="btn-cerrar-popup"><i class="bi bi-x-circle"></i></a>
     <h2>Editar datos cartonero</h2>
     <form action="editarUsuario" method="POST">
       <div class="contenedor-inputs">
-        <input type="text" class="form-control" name="nombreMaterial" placeholder="Nombre material">
-        <input type="text" class="form-control" name="descripcionMaterial" rows="3" placeholder="Descripcion">
-        <input type="number" class="form-control idMaterial" name="idMaterial" >
+        <input type="text" class="form-control" name="nombre" placeholder="Nombre">
+        <input type="text" class="form-control" name="apellido" placeholder="Apellido">
+        <input type="password" id="password" name="password" placeholder="password"  />
+        <input type="text" id="direccion" name="direccion" placeholder="Direccion"/>
+        <input type="number" class="form-control idMaterial" name="idUsuario" >
         <button type="submit" class="btn btn-success mb-3">Editar datos</button>
       </div>
     </form>
@@ -53,11 +55,10 @@
                 <form action="registrarseCartonero" method="post" id="formCartonero">
                     <div class="block-heading">
                         <h2 class="text-info">REGISTRAR CARTONERO</h2>
-                        <p>Ingrese datos del cartonero en el siguiente formulario: </p>
                     </div>
                     <div class="form-group"><label>Nombre</label><input class="form-control"  id="nombre" name="nombre" placeholder="nombre" type="text" /></div>
                     <div class="form-group"><label>Apellido</label><input  id="apellido" name="apellido" placeholder="apellido" class="form-control" type="text" /></div>
-                    <div class="form-group"><label>Contraseña</label><input class="form-control" id="password" name="password" placeholder="password"  type="password"/></div>
+                    <div class="form-group"><label>Contraseña</label><input class="form-control" id="password" name="password" placeholder="Contraseña"  type="password"/></div>
                     <div class="form-group"><label>Dirección</label><input id="direccion" name="direccion" placeholder="direccion" class="form-control"/></div>
                     <div class="form-group"><label>DNI</label><input id="dni" name="dni" placeholder="DNI" class="form-control"/></div>
                     <input id="isAdm" value="-1" name="isAdm" class="form-control"/>

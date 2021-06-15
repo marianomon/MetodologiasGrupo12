@@ -31,7 +31,12 @@ class CentroModel
   function BorrarUsuario($id){
     $sentencia = $this->db->prepare("DELETE from usuario where id_usuario=?");
     $sentencia->execute(array($id));
-    }
+  }
+
+  function EditarUsuario($nombre,$apellido,$id,$direccion,$contraseña){
+    $sentencia = $this->db->prepare( "UPDATE usuario set nombre = ?, apellido = ?,direccion=?,contraseña=? where id_usuario=?");
+    $sentencia->execute(array($nombre,$apellido,$direccion,$contraseña,$id));
+  }
 
   function GetCiudadanos(){
     $sentencia = $this->db->prepare( "select * from usuario where isAdm = 1");

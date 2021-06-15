@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2021-06-15 05:30:22
+/* Smarty version 3.1.33, created on 2021-06-15 06:55:22
   from 'C:\xampp\htdocs\proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\listaUsuarios.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_60c81ecea95a59_34952375',
+  'unifunc' => 'content_60c832ba0ec7e3_95450997',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '77cd8d242bd2a180b9d55681b189e029b3060766' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\listaUsuarios.tpl',
-      1 => 1623727778,
+      1 => 1623732873,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60c81ecea95a59_34952375 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60c832ba0ec7e3_95450997 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:navAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -86,14 +86,16 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
   </tbody>
 </table>
 <div class="overlay" id="overlay">
-  <div class="popup" id="popup">
+  <div class="popup formEditar" id="popup">
     <a href="#" class="btn-cerrar-popup"id="btn-cerrar-popup"><i class="bi bi-x-circle"></i></a>
     <h2>Editar datos cartonero</h2>
     <form action="editarUsuario" method="POST">
       <div class="contenedor-inputs">
-        <input type="text" class="form-control" name="nombreMaterial" placeholder="Nombre material">
-        <input type="text" class="form-control" name="descripcionMaterial" rows="3" placeholder="Descripcion">
-        <input type="number" class="form-control idMaterial" name="idMaterial" >
+        <input type="text" class="form-control" name="nombre" placeholder="Nombre">
+        <input type="text" class="form-control" name="apellido" placeholder="Apellido">
+        <input type="password" id="password" name="password" placeholder="password"  />
+        <input type="text" id="direccion" name="direccion" placeholder="Direccion"/>
+        <input type="number" class="form-control idMaterial" name="idUsuario" >
         <button type="submit" class="btn btn-success mb-3">Editar datos</button>
       </div>
     </form>
@@ -105,11 +107,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <form action="registrarseCartonero" method="post" id="formCartonero">
                     <div class="block-heading">
                         <h2 class="text-info">REGISTRAR CARTONERO</h2>
-                        <p>Ingrese datos del cartonero en el siguiente formulario: </p>
                     </div>
                     <div class="form-group"><label>Nombre</label><input class="form-control"  id="nombre" name="nombre" placeholder="nombre" type="text" /></div>
                     <div class="form-group"><label>Apellido</label><input  id="apellido" name="apellido" placeholder="apellido" class="form-control" type="text" /></div>
-                    <div class="form-group"><label>Contraseña</label><input class="form-control" id="password" name="password" placeholder="password"  type="password"/></div>
+                    <div class="form-group"><label>Contraseña</label><input class="form-control" id="password" name="password" placeholder="Contraseña"  type="password"/></div>
                     <div class="form-group"><label>Dirección</label><input id="direccion" name="direccion" placeholder="direccion" class="form-control"/></div>
                     <div class="form-group"><label>DNI</label><input id="dni" name="dni" placeholder="DNI" class="form-control"/></div>
                     <input id="isAdm" value="-1" name="isAdm" class="form-control"/>
