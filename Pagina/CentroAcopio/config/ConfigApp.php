@@ -6,6 +6,7 @@ define('HOMECIUDADANO', 'Location: http://'.$_SERVER["SERVER_NAME"] . ':'.$_SERV
 define('HOMEADMIN', 'Location: http://'.$_SERVER["SERVER_NAME"] . ':'.$_SERVER['SERVER_PORT'] . dirname($_SERVER["PHP_SELF"]). '/URL_ADMINISTRADOR');
 define('LOGIN', 'Location: http://'.$_SERVER["SERVER_NAME"] . ':'.$_SERVER['SERVER_PORT']  .dirname($_SERVER["PHP_SELF"]). '/Login');
 define('LOGOUT', 'Location: http://'.$_SERVER["SERVER_NAME"] . ':'.$_SERVER['SERVER_PORT'] . dirname($_SERVER["PHP_SELF"]). '/LogOut');
+define('LISTAUSUARIOS', 'Location: http://'.$_SERVER["SERVER_NAME"] . ':'.$_SERVER['SERVER_PORT'] . dirname($_SERVER["PHP_SELF"]). '/mostrarUsuarios');
 
 
 class ConfigApp
@@ -32,6 +33,10 @@ class ConfigApp
       'URL_CIUDADANO'=> 'CentroController#MostrarHomeUsuario',
       'URL_ADMINISTRADOR'=> 'CentroController#MostrarHomeAdmin',
       'LogOut'=>'LoginController#Logout',
+      'mostrarUsuarios'=>'CentroController#mostrarUsuarios',
+      'borrarUsuario' => 'CentroController#BorrarUsuario',
+      'aceptarUsuario' => 'CentroController#aceptarUsuario',
+      'editarUsuario' => 'CentroController#EditarUsuario',
     ];
 }
 
