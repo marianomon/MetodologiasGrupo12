@@ -77,7 +77,8 @@ class CentroController{
     $direccion = $_POST['direccion'];
     $contraseña = $_POST['password'];
     $id = $_POST['idUsuario'];
-    $this->model->EditarUsuario($nombre,$apellido,$id,$direccion,$contraseña);
+    $hash = password_hash($contraseña,PASSWORD_DEFAULT);
+    $this->model->EditarUsuario($nombre,$apellido,$id,$direccion,$hash);
     header(LISTAUSUARIOS);
   }
 
