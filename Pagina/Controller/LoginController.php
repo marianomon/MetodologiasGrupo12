@@ -21,6 +21,7 @@ class LoginController {
             session_start();
             $_SESSION['email'] = $usuario->email;
             $_SESSION['userId'] = $usuario->id_usuario;
+            $_SESSION['admin'] = $usuario->isAdm;
             echo($usuario->isAdm);
             if ($usuario->isAdm==1) {
                 header("Location: " . URL_ADMINISTRADOR );
@@ -77,6 +78,12 @@ class LoginController {
         $userType=-1;
         $hash = password_hash($contraseña,PASSWORD_DEFAULT);
         $this->model->InsertarUsuarioCart($nombre,$hash,$direccion,$nacimiento,$apellido,$userType,$dni);
-        $this->iniciarSesion();
+        session_start();
+        if($_SESSION['admin'] == 1){
+            header(LISTAUSUARIOS);
+        }else{
+            $this->iniciarSesion();
+        }
+        
     }
 }

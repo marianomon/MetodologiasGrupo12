@@ -72,12 +72,24 @@ class CentroController{
     header(HOMEADMIN);
   }
 
+  function BorrarUsuario($param){
+    //$this->model->BorrarMaterial($param[0]);
+    header(LISTAUSUARIOS);
+  }
+
   
 
   function MostrarHomeAdmin(){
     $materiales = $this->model->GetMateriales(); //pedir materiales aceptados
    // $Generos = $this->GeneroModel->GetGeneros();//aca podriamos pedir las noticias (en el proximo sprint)
     $this->view->MostrarHomeAdmin($this->Titulo, $materiales);
+  }
+
+
+  function mostrarUsuarios(){
+    $cartoneros = $this->model->GetCartoneros();
+    $ciudadanos = $this->model->GetCiudadanos();
+    $this->view->MostrarUsuarios($this->Titulo, $cartoneros , $ciudadanos);
   }
 
 

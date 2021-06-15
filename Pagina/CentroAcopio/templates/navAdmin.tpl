@@ -5,7 +5,7 @@
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="URL_ADMINISTRADOR">Materiales aceptados</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="{$BASE_URL}ofertas">Ofertas</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="{$BASE_URL}ofertas">Lista de usuarios</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="mostrarUsuarios">Lista de usuarios</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="LogOut">Salir</a></li>
                 </ul>
             </div>

@@ -17,6 +17,18 @@ class CentroModel
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  function GetCartoneros(){
+    $sentencia = $this->db->prepare( "select * from usuario where isAdm= -1 ");
+    $sentencia->execute();
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  function GetCiudadanos(){
+    $sentencia = $this->db->prepare( "select * from usuario where isAdm = 1");
+    $sentencia->execute();
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
   function AgregarMaterialBalanza($material,$peso, $id){
     $sentencia = $this->db->prepare("INSERT INTO `materialesRecogidos`( `idMaterial`, `cantidad`, `idUsuario`) VALUES (?,?,?)");
     $sentencia->execute(array($nombre,$volumen, $id));

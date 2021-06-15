@@ -10,6 +10,12 @@ body{
 }
 
 
+#formContainer #formCartonero{
+  width: 98% !important;
+  max-width: none;
+}
+
+
 
 
 .fondoMain{
