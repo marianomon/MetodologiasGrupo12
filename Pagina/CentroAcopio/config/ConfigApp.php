@@ -6,11 +6,10 @@ define('HOMECIUDADANO', 'Location: http://'.$_SERVER["SERVER_NAME"] . ':'.$_SERV
 define('HOMEADMIN', 'Location: http://'.$_SERVER["SERVER_NAME"] . ':'.$_SERVER['SERVER_PORT'] . dirname($_SERVER["PHP_SELF"]). '/URL_ADMINISTRADOR');
 define('LOGIN', 'Location: http://'.$_SERVER["SERVER_NAME"] . ':'.$_SERVER['SERVER_PORT']  .dirname($_SERVER["PHP_SELF"]). '/Login');
 define('LOGOUT', 'Location: http://'.$_SERVER["SERVER_NAME"] . ':'.$_SERVER['SERVER_PORT'] . dirname($_SERVER["PHP_SELF"]). '/LogOut');
-
+define("PEDIDOS", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/pedidos');
 
 class ConfigApp
 {
-
     public static $ACTION = 'action';
     public static $PARAMS = 'params';
     public static $ACTIONS = [
@@ -20,9 +19,7 @@ class ConfigApp
       'registrarCiudadano' => 'LoginController#DisplayRegistroCiudadano',
       'registrarCartonero' => 'LoginController#DisplayRegistroCartonero',
       'registrarse'=> 'LoginController#registrarse',
-      'registrarseCartonero' => 'LoginController#registrarseCartonero', 
-      'balanza' => 'CentroController#MostrarBalanza', 
-      'subirBalanza' => 'CentroController#SubirBalanza',
+      'registrarseCartonero' => 'LoginController#registrarseCartonero',  
       'generarPedidoRetiro' => 'CentroController#PedidoDeRetiro',
       'agregarPedido' => 'CentroController#AgregarPedido',
       'agregarMaterial' => 'CentroController#AgregarMaterial',
@@ -32,6 +29,7 @@ class ConfigApp
       'URL_CIUDADANO'=> 'CentroController#MostrarHomeUsuario',
       'URL_ADMINISTRADOR'=> 'CentroController#MostrarHomeAdmin',
       'LogOut'=>'LoginController#Logout',
+      'pedidos'=>'AdminController#GetPedidos',
     ];
 }
 
