@@ -14,10 +14,10 @@
                             <li><a class="dropdown-item" href="registrarCiudadano">Ciudadano</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="balanza">Balanza</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="balanzaReg">Balanza</a></li>
                 </ul>
             </div>
         </div>
-    </nav>
+</nav>
 
     

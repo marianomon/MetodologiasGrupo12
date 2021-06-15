@@ -13,6 +13,14 @@ class LoginModel {
         $password = $sentencia->fetch(PDO::FETCH_OBJ);   
         return $password;
     }
+
+    public function GetPasswordCartonero($dni){
+        $sentencia = $this->db->prepare( "SELECT * FROM usuario WHERE dni = ? LIMIT 1");
+        $sentencia->execute(array($dni));
+        $password = $sentencia->fetch(PDO::FETCH_OBJ);   
+        return $password;
+    }
+
     public function GetUser($id_user){
         $sentencia = $this->db->prepare("SELECT * FROM usuario where id_usuario = ?");
         $sentencia->execute(array($id_user));

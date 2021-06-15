@@ -22,7 +22,6 @@ class LoginController {
             $_SESSION['email'] = $usuario->email;
             $_SESSION['userId'] = $usuario->id_usuario;
             $_SESSION['admin'] = $usuario->isAdm;
-            echo($usuario->isAdm);
             if ($usuario->isAdm==1) {
                 header("Location: " . URL_ADMINISTRADOR );
             }
@@ -40,7 +39,6 @@ class LoginController {
         $this->view->DisplayLogin($this->Titulo);
     }
 
-
     public function logout(){
         session_start();
         session_destroy();
@@ -53,6 +51,24 @@ class LoginController {
 
     public function DisplayRegistroCartonero(){
         $this->view->DisplayRegistroCartonero();
+    }
+
+    public function logCartonero(){
+        $password = $_POST['password'];
+        $usuario = $this->model->GetPasswordCartonero($_POST['dni']);
+        echo(password_verify($password,$usuario->contraseña));
+        if (isset($usuario) && password_verify($password,$usuario->contraseña)){
+            session_start();
+            $_SESSION['dni'] = $usuario->dni;
+            $_SESSION['userId'] = $usuario->id_usuario;
+            if ($usuario->isAdm==-1) {
+                header("Location: " . balanza);
+            }else{
+                header("Location: " . home);
+            }
+        }else{
+            header("Location: " . home);
+        }       
     }
 
     public function registrarse(){

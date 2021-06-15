@@ -22,6 +22,13 @@ class CentroView
     $this->Smarty->assign('cartoneros',$cartoneros);
     $this->Smarty->display('templates/listaUsuarios.tpl');
   }
+  
+  function MostrarMatAportados($Titulo, $Materiales, $materialesAport){
+    $this->Smarty->assign('Titulo',$Titulo);
+    $this->Smarty->assign('materiales',$Materiales);
+    $this->Smarty->assign('materialesAport',$materialesAport);
+    $this->Smarty->display('templates/MisMaterialesAportados.tpl');
+  }
 
   function PedidoDeRetiro($Titulo){
     $this->Smarty->assign('Titulo', $Titulo);
@@ -43,6 +50,12 @@ class CentroView
     $this->Smarty->assign('materiales',$Materiales);
     $this->Smarty->display('templates/Balanza.tpl');
   }
+
+  public function MostrarLoginCartonero($Titulo){
+    $this->Smarty->assign('Titulo', $Titulo);
+    $this->Smarty->display('templates/LoginCartonero.tpl');
+  }
+
 
   
 }
