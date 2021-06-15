@@ -15,6 +15,9 @@ body{
   max-width: none;
 }
 
+#isAdm{
+  display: none !important;
+}
 
 
 

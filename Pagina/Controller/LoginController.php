@@ -75,15 +75,19 @@ class LoginController {
         $direccion=$_POST['direccion'];
         $nacimiento=$_POST['nacimiento'];
         $dni=$_POST['dni'];
-        $userType=-1;
+        $userType=$_POST['isAdm'];
+        $active=$_POST['active'];
+        echo($active);
         $hash = password_hash($contraseña,PASSWORD_DEFAULT);
-        $this->model->InsertarUsuarioCart($nombre,$hash,$direccion,$nacimiento,$apellido,$userType,$dni);
+        $this->model->InsertarUsuarioCart($nombre,$hash,$direccion,$nacimiento,$apellido,$userType,$dni,$active);
         session_start();
         if($_SESSION['admin'] == 1){
             header(LISTAUSUARIOS);
         }else{
             $this->iniciarSesion();
         }
+        
+        
         
     }
 }

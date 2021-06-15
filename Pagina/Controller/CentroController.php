@@ -93,8 +93,8 @@ class CentroController{
 
   function mostrarUsuarios(){
     $cartoneros = $this->model->GetCartoneros();
-    $ciudadanos = $this->model->GetCiudadanos();
-    $this->view->MostrarUsuarios($this->Titulo, $cartoneros , $ciudadanos);
+    //$ciudadanos = $this->model->GetCiudadanos();
+    $this->view->MostrarUsuarios($this->Titulo, $cartoneros);
   }
 
 
