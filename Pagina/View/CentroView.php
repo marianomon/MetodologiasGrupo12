@@ -38,6 +38,12 @@ class CentroView
     $this->Smarty->display('templates/Balanza.tpl');
   }
 
+  public function MostrarLoginCartonero($Titulo){
+    $this->Smarty->assign('Titulo', $Titulo);
+    $this->Smarty->display('templates/LoginCartonero.tpl');
+  }
+
+
   
 }
   ?>

@@ -19,9 +19,8 @@ class CentroModel
 
   function AgregarMaterialBalanza($material,$peso, $id){
     $sentencia = $this->db->prepare("INSERT INTO `materialesRecogidos`( `idMaterial`, `cantidad`, `idUsuario`) VALUES (?,?,?)");
-    $sentencia->execute(array($nombre,$volumen, $id));
+    $sentencia->execute(array($material,$peso, $id));
   }
-
 
   function AgregarPedido($nombre, $volumen){
     $sentencia = $this->db->prepare("INSERT INTO `pedidos`( `id_usuario`, `volumen`) VALUES (?,?)");

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2021-06-13 20:43:29
+/* Smarty version 3.1.33, created on 2021-06-15 01:28:23
   from 'C:\xampp\htdocs\Proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\sectionMateriales.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_60c651d152b847_18069867',
+  'unifunc' => 'content_60c7e6179f8e85_03885699',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bf60821eb23215df1a13d544afe816ded69bb68d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\sectionMateriales.tpl',
-      1 => 1622057922,
+      1 => 1623713199,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60c651d152b847_18069867 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60c7e6179f8e85_03885699 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <section class="clean-block features dark">
             <div class="container">
                 <div class="block-heading">
@@ -46,5 +46,5 @@ foreach ($_from as $_smarty_tpl->tpl_vars['Material']->value) {
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </div>
             </div>
-        </section><?php }
+    </section><?php }
 }

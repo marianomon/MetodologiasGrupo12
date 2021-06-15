@@ -16,8 +16,7 @@ class CentroController{
   }
 
   function Home(){
-    $Centro = $this->model->GetMateriales(); //pedir materiales aceptados
-    //$Generos = $this->GeneroModel->GetGeneros(); //aca podriamos pedir las noticias (en el proximo sprint)
+    $Centro = $this->model->GetMateriales();
     $this->view->Mostrar($this->Titulo, $Centro);
   }
 
@@ -41,6 +40,11 @@ class CentroController{
     $material = $_POST["material"];
     $peso = $_POST['kg'];
     $this->model->AgregarMaterialBalanza($material,$peso, $id);
+    header('Location: ' . balanza);
+  }
+
+  function MostrarLoginCartonero(){
+    $this->view->MostrarLoginCartonero($this->Titulo);
   }
 
   function AgregarPedido(){
@@ -49,7 +53,6 @@ class CentroController{
     $volumen = $_POST["volumen"];
     $this->model->AgregarPedido($id,$volumen);
     $this->addImages($id);
-    //header(HOMECIUDADANO);
   }
 
   function AgregarMaterial(){
@@ -72,15 +75,10 @@ class CentroController{
     header(HOMEADMIN);
   }
 
-  
-
   function MostrarHomeAdmin(){
-    $materiales = $this->model->GetMateriales(); //pedir materiales aceptados
-   // $Generos = $this->GeneroModel->GetGeneros();//aca podriamos pedir las noticias (en el proximo sprint)
+    $materiales = $this->model->GetMateriales();
     $this->view->MostrarHomeAdmin($this->Titulo, $materiales);
   }
-
-
 
   function addImages($id){
     if ($_FILES['image']['tmp_name'] == null){

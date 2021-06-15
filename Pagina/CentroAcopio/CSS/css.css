@@ -4,13 +4,10 @@ body{
 }
 
 .navDisc{
-  width: 100% important;
+  width: 100% !important;
   background-color: red;
   height: 60px;
 }
-
-
-
 
 .fondoMain{
   width: 100%;

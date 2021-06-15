@@ -1,19 +1,16 @@
 {include file="header.tpl"}
-{include file="navdeslog.tpl"}
-    //Barra de navegacion
+{include file="navBalanza.tpl"}
     <main class="page contact-us-page">
     <section class="clean-block clean-form">
         <div class="container">
-            
             <form action="subirBalanza" method="post">
                 <div class="block-heading">
                     <h2 class="text-info">INGRESE MATERIALES</h2>
                     <p>Ingrese los datos de los materiales: </p>
                 </div>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Material</option>
+                <select name="material" class="form-select" aria-label="Default select example">
                     {foreach from=$materiales item=Material}
-                        <option name="material" value={$Material['id_material']}>{$Material['nombre']}</option>
+                        <option  value={$Material['id_material']}>{$Material['nombre']}</option>
                     {/foreach}
                 </select>
                 <br>
