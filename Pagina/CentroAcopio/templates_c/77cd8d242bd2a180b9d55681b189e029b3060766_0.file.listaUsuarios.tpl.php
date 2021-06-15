@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2021-06-15 04:55:18
+/* Smarty version 3.1.33, created on 2021-06-15 05:02:24
   from 'C:\xampp\htdocs\proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\listaUsuarios.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_60c81696895390_03447357',
+  'unifunc' => 'content_60c8184057df82_72765894',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '77cd8d242bd2a180b9d55681b189e029b3060766' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\listaUsuarios.tpl',
-      1 => 1623725651,
+      1 => 1623726139,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60c81696895390_03447357 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60c8184057df82_72765894 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:navAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -61,11 +61,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['cartonero']->value) {
 echo $_smarty_tpl->tpl_vars['cartonero']->value['activo'];
 $_prefixVariable1 = ob_get_clean();
 if ($_prefixVariable1 == false) {?>
-                    <td><button type="button" class="btn btn-success editar" id="btn-editar" value=<?php ob_start();
-echo $_smarty_tpl->tpl_vars['cartonero']->value['id_usuario'];
-$_prefixVariable2 = ob_get_clean();
-echo $_prefixVariable2;?>
- >Aceptar</button></td>
+                    <td><a class = "btn btn-success" href="aceptarUsuario/<?php echo $_smarty_tpl->tpl_vars['cartonero']->value['id_usuario'];?>
+" id="<?php echo $_smarty_tpl->tpl_vars['cartonero']->value['id_usuario'];?>
+">Aceptar</a></td>
                     <td><a class = "btn btn-outline-danger" href="borrarUsuario/<?php echo $_smarty_tpl->tpl_vars['cartonero']->value['id_usuario'];?>
 " id="<?php echo $_smarty_tpl->tpl_vars['cartonero']->value['id_usuario'];?>
 ">Rechazar</a></td>
@@ -75,8 +73,8 @@ echo $_prefixVariable2;?>
 ">Borrar</a></td>
             <td><button type="button" class="btn btn-outline-light editar" id="btn-editar" value=<?php ob_start();
 echo $_smarty_tpl->tpl_vars['cartonero']->value['id_usuario'];
-$_prefixVariable3 = ob_get_clean();
-echo $_prefixVariable3;?>
+$_prefixVariable2 = ob_get_clean();
+echo $_prefixVariable2;?>
  >Editar</button></td>
             <?php }?>
             

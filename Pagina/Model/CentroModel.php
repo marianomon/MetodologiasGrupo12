@@ -23,6 +23,16 @@ class CentroModel
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  function aceptarUsuario($id){
+    $sentencia = $this->db->prepare( "UPDATE usuario set activo = ? where id_usuario =?");
+    $sentencia->execute(array(1,$id));
+  }
+
+  function BorrarUsuario($id){
+    $sentencia = $this->db->prepare("DELETE from usuario where id_usuario=?");
+    $sentencia->execute(array($id));
+    }
+
   function GetCiudadanos(){
     $sentencia = $this->db->prepare( "select * from usuario where isAdm = 1");
     $sentencia->execute();
@@ -69,6 +79,8 @@ class CentroModel
         $sentencia->execute(array($id,$pathImg));
     }
 }
+
+
 }
 
 

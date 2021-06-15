@@ -35,6 +35,7 @@ class ConfigApp
       'LogOut'=>'LoginController#Logout',
       'mostrarUsuarios'=>'CentroController#mostrarUsuarios',
       'borrarUsuario' => 'CentroController#BorrarUsuario',
+      'aceptarUsuario' => 'CentroController#aceptarUsuario',
     ];
 }
 

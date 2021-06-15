@@ -22,7 +22,7 @@
             <td>{$cartonero['fechaNacimiento']}</td>
             <td>{$cartonero['direccion']}</td>
             {if {$cartonero['activo']} == false}
-                    <td><button type="button" class="btn btn-success editar" id="btn-editar" value={{$cartonero['id_usuario']}} >Aceptar</button></td>
+                    <td><a class = "btn btn-success" href="aceptarUsuario/{$cartonero['id_usuario']}" id="{$cartonero['id_usuario']}">Aceptar</a></td>
                     <td><a class = "btn btn-outline-danger" href="borrarUsuario/{$cartonero['id_usuario']}" id="{$cartonero['id_usuario']}">Rechazar</a></td>
                   {else}
                     <td><a class = "btn btn-outline-danger" href="borrarUsuario/{$cartonero['id_usuario']}" id="{$cartonero['id_usuario']}">Borrar</a></td>

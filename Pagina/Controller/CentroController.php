@@ -73,7 +73,12 @@ class CentroController{
   }
 
   function BorrarUsuario($param){
-    //$this->model->BorrarMaterial($param[0]);
+    $this->model->BorrarUsuario($param[0]);
+    header(LISTAUSUARIOS);
+  }
+
+  function aceptarUsuario($param){
+    $this->model->aceptarUsuario($param[0]);
     header(LISTAUSUARIOS);
   }
 
