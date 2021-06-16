@@ -17,11 +17,43 @@ class CentroModel
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  function AgregarMaterialBalanza($material,$peso, $id){
-    $sentencia = $this->db->prepare("INSERT INTO `materialesRecogidos`( `idMaterial`, `cantidad`, `idUsuario`) VALUES (?,?,?)");
-    $sentencia->execute(array($nombre,$volumen, $id));
+  function GetCartoneros(){
+    $sentencia = $this->db->prepare( "select * from usuario where isAdm= -1 ");
+    $sentencia->execute();
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  function aceptarUsuario($id){
+    $sentencia = $this->db->prepare( "UPDATE usuario set activo = ? where id_usuario =?");
+    $sentencia->execute(array(1,$id));
+  }
+
+  function BorrarUsuario($id){
+    $sentencia = $this->db->prepare("DELETE from usuario where id_usuario=?");
+    $sentencia->execute(array($id));
+  }
+
+  function EditarUsuario($nombre,$apellido,$id,$direccion,$contraseña){
+    $sentencia = $this->db->prepare( "UPDATE usuario set nombre = ?, apellido = ?,direccion=?,contraseña=? where id_usuario=?");
+    $sentencia->execute(array($nombre,$apellido,$direccion,$contraseña,$id));
+  }
+
+  function GetCiudadanos(){
+    $sentencia = $this->db->prepare( "select * from usuario where isAdm = 1");
+    $sentencia->execute();
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  function AgregarMaterialBalanza($material,$peso, $id){
+    $sentencia = $this->db->prepare("INSERT INTO `materialesRecogidos`( `idMaterial`, `cantidad`, `idUsuario`) VALUES (?,?,?)");
+    $sentencia->execute(array($material,$peso, $id));
+  }
+
+  function GetMaterialesAportados($id){
+    $sentencia = $this->db->prepare( "select * from materialesrecogidos WHERE idUsuario = ?");
+    $sentencia->execute(array($id));
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
 
   function AgregarPedido($nombre, $volumen){
     $sentencia = $this->db->prepare("INSERT INTO `pedidos`( `id_usuario`, `volumen`) VALUES (?,?)");
@@ -57,6 +89,8 @@ class CentroModel
         $sentencia->execute(array($id,$pathImg));
     }
 }
+
+
 }
 
 

@@ -14,6 +14,8 @@
                     <div class="form-group"><label>Contraseña</label><input class="form-control" id="password" name="password" placeholder="password"  type="password"/></div>
                     <div class="form-group"><label>Dirección</label><input id="direccion" name="direccion" placeholder="direccion" class="form-control"/></div>
                     <div class="form-group"><label>DNI</label><input id="dni" name="dni" placeholder="DNI" class="form-control"/></div>
+                    <input id="isAdm" value="-1" name="isAdm" class="form-control"/>
+                    <input id="isAdm" value="0" name="active" class="form-control"/>
                     <div class="form-group"><p>Fecha de Nacimiento</p><input type="date" id="nacimiento" name="nacimiento"
                             value="2000-07-22"
                             min="1900-01-01" max="2002-01-01"></div>

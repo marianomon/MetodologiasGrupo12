@@ -48,6 +48,4 @@
     </form>
   </div>
 
-<script src="./js/main.js"></script>
-
 {include file="footer.tpl"}

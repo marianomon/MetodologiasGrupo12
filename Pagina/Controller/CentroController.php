@@ -16,8 +16,7 @@ class CentroController{
   }
 
   function Home(){
-    $Centro = $this->model->GetMateriales(); //pedir materiales aceptados
-    //$Generos = $this->GeneroModel->GetGeneros(); //aca podriamos pedir las noticias (en el proximo sprint)
+    $Centro = $this->model->GetMateriales();
     $this->view->Mostrar($this->Titulo, $Centro);
   }
 
@@ -41,6 +40,11 @@ class CentroController{
     $material = $_POST["material"];
     $peso = $_POST['kg'];
     $this->model->AgregarMaterialBalanza($material,$peso, $id);
+    header('Location: ' . balanza);
+  }
+
+  function MostrarLoginCartonero(){
+    $this->view->MostrarLoginCartonero($this->Titulo);
   }
 
   function AgregarPedido(){
@@ -49,7 +53,6 @@ class CentroController{
     $volumen = $_POST["volumen"];
     $this->model->AgregarPedido($id,$volumen);
     $this->addImages($id);
-    //header(HOMECIUDADANO);
   }
 
   function AgregarMaterial(){
@@ -67,20 +70,54 @@ class CentroController{
     header(HOMEADMIN);
   }
 
+
+  function EditarUsuario(){
+    $nombre = $_POST["nombre"];
+    $apellido = $_POST['apellido'];
+    $direccion = $_POST['direccion'];
+    $contraseña = $_POST['password'];
+    $id = $_POST['idUsuario'];
+    $hash = password_hash($contraseña,PASSWORD_DEFAULT);
+    $this->model->EditarUsuario($nombre,$apellido,$id,$direccion,$hash);
+    header(LISTAUSUARIOS);
+  }
+
   function BorrarMaterial($param){
     $this->model->BorrarMaterial($param[0]);
     header(HOMEADMIN);
   }
 
+  function BorrarUsuario($param){
+    $this->model->BorrarUsuario($param[0]);
+    header(LISTAUSUARIOS);
+  }
+
+  function aceptarUsuario($param){
+    $this->model->aceptarUsuario($param[0]);
+    header(LISTAUSUARIOS);
+  }
+
   
 
   function MostrarHomeAdmin(){
-    $materiales = $this->model->GetMateriales(); //pedir materiales aceptados
-   // $Generos = $this->GeneroModel->GetGeneros();//aca podriamos pedir las noticias (en el proximo sprint)
+    $materiales = $this->model->GetMateriales();
     $this->view->MostrarHomeAdmin($this->Titulo, $materiales);
   }
 
 
+  function mostrarUsuarios(){
+    $cartoneros = $this->model->GetCartoneros();
+    //$ciudadanos = $this->model->GetCiudadanos();
+    $this->view->MostrarUsuarios($this->Titulo, $cartoneros);
+  }
+
+
+  function ObtenerMatAportados(){
+    session_start();
+    $materialesAport = $this->model->GetMaterialesAportados($_SESSION["userId"]);
+    $materiales = $this->model->GetMateriales();
+    $this->view->MostrarMatAportados($this->Titulo, $materiales, $materialesAport);
+  }
 
   function addImages($id){
     if ($_FILES['image']['tmp_name'] == null){

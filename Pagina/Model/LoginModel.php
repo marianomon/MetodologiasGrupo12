@@ -13,6 +13,14 @@ class LoginModel {
         $password = $sentencia->fetch(PDO::FETCH_OBJ);   
         return $password;
     }
+
+    public function GetPasswordCartonero($dni){
+        $sentencia = $this->db->prepare( "SELECT * FROM usuario WHERE dni = ? LIMIT 1");
+        $sentencia->execute(array($dni));
+        $password = $sentencia->fetch(PDO::FETCH_OBJ);   
+        return $password;
+    }
+
     public function GetUser($id_user){
         $sentencia = $this->db->prepare("SELECT * FROM usuario where id_usuario = ?");
         $sentencia->execute(array($id_user));
@@ -25,9 +33,9 @@ class LoginModel {
         $sentencia->execute(array($nombre,$contraseña,$email,$direccion,$telefono,$horarioPreferencia,$apellido));
     }
 
-    public function InsertarUsuarioCart($nombre,$contraseña,$direccion,$nacimiento,$apellido,$userType,$dni){
-        $sentencia = $this->db->prepare("INSERT INTO usuario(`nombre`, `contraseña`, `direccion`, `fechaNacimiento`, `apellido`, `isAdm`, dni) VALUES(?,?,?,?,?,?,?)");
-        $sentencia->execute(array($nombre,$contraseña,$direccion,$nacimiento,$apellido,$userType, $dni));
+    public function InsertarUsuarioCart($nombre,$contraseña,$direccion,$nacimiento,$apellido,$userType,$dni,$active){
+        $sentencia = $this->db->prepare("INSERT INTO usuario(`nombre`, `contraseña`, `direccion`, `fechaNacimiento`, `apellido`, `isAdm`, dni,activo) VALUES(?,?,?,?,?,?,?,?)");
+        $sentencia->execute(array($nombre,$contraseña,$direccion,$nacimiento,$apellido,$userType, $dni,$active));
     }
 }
 

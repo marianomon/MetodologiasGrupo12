@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2021-06-15 02:46:51
-  from 'C:\xampp\htdocs\Proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\Balanza.tpl' */
+/* Smarty version 3.1.33, created on 2021-06-15 07:17:16
+  from 'C:\xampp\htdocs\proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\Balanza.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_60c7f87b1be4c1_81111149',
+  'unifunc' => 'content_60c837dcd90977_53858351',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'd21367d44051d3d45d8e2829a336365e8a463877' => 
+    '415af85e54f950f804d6d1399c8aee066324d5ce' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\Proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\Balanza.tpl',
-      1 => 1623717261,
+      0 => 'C:\\xampp\\htdocs\\proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\Balanza.tpl',
+      1 => 1623733537,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60c7f87b1be4c1_81111149 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60c837dcd90977_53858351 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:navBalanza.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

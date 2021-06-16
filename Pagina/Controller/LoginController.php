@@ -21,7 +21,7 @@ class LoginController {
             session_start();
             $_SESSION['email'] = $usuario->email;
             $_SESSION['userId'] = $usuario->id_usuario;
-            echo($usuario->isAdm);
+            $_SESSION['admin'] = $usuario->isAdm;
             if ($usuario->isAdm==1) {
                 header("Location: " . URL_ADMINISTRADOR );
             }
@@ -39,7 +39,6 @@ class LoginController {
         $this->view->DisplayLogin($this->Titulo);
     }
 
-
     public function logout(){
         session_start();
         session_destroy();
@@ -52,6 +51,24 @@ class LoginController {
 
     public function DisplayRegistroCartonero(){
         $this->view->DisplayRegistroCartonero();
+    }
+
+    public function logCartonero(){
+        $password = $_POST['password'];
+        $usuario = $this->model->GetPasswordCartonero($_POST['dni']);
+        echo(password_verify($password,$usuario->contraseña));
+        if (isset($usuario) && password_verify($password,$usuario->contraseña)){
+            session_start();
+            $_SESSION['dni'] = $usuario->dni;
+            $_SESSION['userId'] = $usuario->id_usuario;
+            if ($usuario->isAdm==-1) {
+                header("Location: " . balanza);
+            }else{
+                header("Location: " . home);
+            }
+        }else{
+            header("Location: " . home);
+        }       
     }
 
     public function registrarse(){
@@ -74,9 +91,19 @@ class LoginController {
         $direccion=$_POST['direccion'];
         $nacimiento=$_POST['nacimiento'];
         $dni=$_POST['dni'];
-        $userType=-1;
+        $userType=$_POST['isAdm'];
+        $active=$_POST['active'];
+        echo($active);
         $hash = password_hash($contraseña,PASSWORD_DEFAULT);
-        $this->model->InsertarUsuarioCart($nombre,$hash,$direccion,$nacimiento,$apellido,$userType,$dni);
-        $this->iniciarSesion();
+        $this->model->InsertarUsuarioCart($nombre,$hash,$direccion,$nacimiento,$apellido,$userType,$dni,$active);
+        session_start();
+        if($_SESSION['admin'] == 1){
+            header(LISTAUSUARIOS);
+        }else{
+            $this->iniciarSesion();
+        }
+        
+        
+        
     }
 }
