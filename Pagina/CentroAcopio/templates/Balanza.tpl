@@ -16,7 +16,7 @@
                 <br>
                 <br>
                 <div class="form-group"><label>Kilogramos</label><input class="form-control"  id="kg" name="kg" placeholder="Peso" type="number" /></div>
-                <div class="form-group"><button class="btn btn-primary btn-block" value="registrarseCartonero " type="submit">Registrarse</button></div>
+                <div class="form-group"><button class="btn btn-primary btn-block" value="registrarseCartonero " type="submit">Aceptar</button></div>
             </form>
         </div>
     </section>

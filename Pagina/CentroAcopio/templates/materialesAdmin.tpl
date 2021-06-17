@@ -1,7 +1,7 @@
 {include file="header.tpl"}
 {include file="navAdmin.tpl"}
 <div class="container-xxl materialesAdmin">
-  <h2 class="titTabla">Materiales acetados</h2>
+  <h2 class="titTabla">Materiales aceptados</h2>
   <table class="table table-dark table-striped tablaMateriales">
   <thead>
     <tr>
