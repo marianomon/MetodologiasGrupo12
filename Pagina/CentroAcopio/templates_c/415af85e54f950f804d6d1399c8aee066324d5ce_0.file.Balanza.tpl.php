@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2021-06-15 07:17:16
+/* Smarty version 3.1.33, created on 2021-06-17 20:35:08
   from 'C:\xampp\htdocs\proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\Balanza.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_60c837dcd90977_53858351',
+  'unifunc' => 'content_60cb95dce47529_04654229',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '415af85e54f950f804d6d1399c8aee066324d5ce' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\Balanza.tpl',
-      1 => 1623733537,
+      1 => 1623954906,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60c837dcd90977_53858351 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60cb95dce47529_04654229 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:navBalanza.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -52,7 +52,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <br>
                 <br>
                 <div class="form-group"><label>Kilogramos</label><input class="form-control"  id="kg" name="kg" placeholder="Peso" type="number" /></div>
-                <div class="form-group"><button class="btn btn-primary btn-block" value="registrarseCartonero " type="submit">Registrarse</button></div>
+                <div class="form-group"><button class="btn btn-primary btn-block" value="registrarseCartonero " type="submit">Aceptar</button></div>
             </form>
         </div>
     </section>
