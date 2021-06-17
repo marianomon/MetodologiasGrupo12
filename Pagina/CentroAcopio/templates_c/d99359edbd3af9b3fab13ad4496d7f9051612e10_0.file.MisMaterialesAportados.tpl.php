@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2021-06-15 07:17:30
+/* Smarty version 3.1.33, created on 2021-06-17 20:19:48
   from 'C:\xampp\htdocs\proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\MisMaterialesAportados.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_60c837eaec68c3_35494159',
+  'unifunc' => 'content_60cb92446f0b54_63607892',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd99359edbd3af9b3fab13ad4496d7f9051612e10' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\MisMaterialesAportados.tpl',
-      1 => 1623733537,
+      1 => 1623953979,
       2 => 'file',
     ),
   ),
@@ -23,12 +23,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60c837eaec68c3_35494159 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60cb92446f0b54_63607892 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:navBalanza.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="container-xxl materialesAdmin">
-  <h2 class="titTabla">Materiales acetados</h2>
+  <h2 class="titTabla">Materiales Aportados</h2>
   <table class="table table-dark table-striped tablaMateriales">
   <thead>
     <tr>
