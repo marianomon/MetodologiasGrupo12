@@ -10,7 +10,6 @@
                             Registrarse
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="registrarCartonero">Cartonero</a></li>
                             <li><a class="dropdown-item" href="registrarCiudadano">Ciudadano</a></li>
                         </ul>
                     </li>
