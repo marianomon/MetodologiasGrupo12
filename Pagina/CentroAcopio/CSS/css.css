@@ -10,6 +10,20 @@ body{
   margin-bottom: 40px;
 }
 
+.contenedorRadio input{
+  width: auto !important;
+  margin-bottom:initial !important;
+  height:initial !important;
+  line-height: initial !important;
+  font-size: initial !important;
+  border: 1px solid #bbbbbb;
+}
+
+.contenedorRadio{
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
 .navDisc{
   width: 100% !important;
   background-color: transparent;
