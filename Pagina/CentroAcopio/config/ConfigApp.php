@@ -41,6 +41,7 @@ class ConfigApp
       'editarUsuario' => 'CentroController#EditarUsuario',
       'pedidos'=>'AdminController#GetPedidos',
       'ofertas'=>'CentroController#mostrarOfertas',
+      'agregarOferta'=>'CentroController#agregarOferta',
     ];
 }
 

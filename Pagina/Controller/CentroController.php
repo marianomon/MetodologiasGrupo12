@@ -47,6 +47,16 @@ class CentroController{
     header('Location: ' . balanza);
   }
 
+  function agregarOferta(){
+    session_start();
+    $id = $_SESSION["userId"];
+    $zona = $_POST["zona"];
+    $texto = $_POST['textoLibre'];
+    $espacio = $_POST['espacio'];
+    $this->model->AgregarOferta($id,$zona,$texto,$espacio);
+    header('Location: ' . ofertas);
+  }
+
   function MostrarLoginCartonero(){
     $this->view->MostrarLoginCartonero($this->Titulo);
   }
