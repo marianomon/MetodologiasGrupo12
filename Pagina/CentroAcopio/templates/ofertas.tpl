@@ -43,17 +43,17 @@
               <form action="postular" method="post">
                 <input type="number" class="form-control idMaterial" name="idOferta" value="$oferta['id_oferta']">
                 <tr>
-                  <td>Zona: {$oferta['zonaGeografica']}</td>
+                  <td>{$oferta['zonaGeografica']}</td>
                   {if $oferta['espacio'] eq 1}
-                      <td>Espacio: Una caja</td>
+                      <td>Una caja</td>
                   {elseif $oferta['espacio'] eq 2}
-                    <td>Espacio: Baul en un auto</td>
+                    <td>Baul en un auto</td>
                   {else if $oferta['espacio'] eq 3}
-                    <td>Espacio: La caja de una camioneta</td>
+                    <td>La caja de una camioneta</td>
                   {else}
-                    <td>Espacio: Un camion</td>
+                    <td>Un camion</td>
                   {/if}
-                    <td>Descripcion: {$oferta['texto']}</td>
+                    <td>{$oferta['texto']}</td>
                   <td><a class = "btn btn-outline-danger" type="submit">Postularme</a></td>
                 </tr>
               </form>
