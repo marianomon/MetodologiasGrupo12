@@ -18,8 +18,7 @@
                             Registrarse
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="Login">Cartonero</a></li>
-                            <li><a class="dropdown-item" href="Login">Ciudadano</a></li>
+                            <li><a class="dropdown-item" href="registrarCiudadano">Ciudadano</a></li>
                         </ul>
                     </li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="balanzaReg">Balanza</a></li>
