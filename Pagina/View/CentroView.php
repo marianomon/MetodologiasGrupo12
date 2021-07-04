@@ -38,9 +38,10 @@ class CentroView
     $this->Smarty->display('templates/listaUsuarios.tpl');
   }
   
-  function MostrarMatAportados($Titulo, $Materiales, $materialesAport){
+  function MostrarMatAportados($Titulo, $Materiales, $materialesAport,$activo){
     $this->Smarty->assign('Titulo',$Titulo);
     $this->Smarty->assign('materiales',$Materiales);
+    $this->Smarty->assign('Activo', $activo);
     $this->Smarty->assign('materialesAport',$materialesAport);
     $this->Smarty->display('templates/MisMaterialesAportados.tpl');
   }

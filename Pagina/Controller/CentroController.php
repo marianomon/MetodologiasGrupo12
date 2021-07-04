@@ -148,8 +148,9 @@ class CentroController{
   function ObtenerMatAportados(){
     session_start();
     $materialesAport = $this->model->GetMaterialesAportados($_SESSION["userId"]);
+    $activo= true;
     $materiales = $this->model->GetMateriales();
-    $this->view->MostrarMatAportados($this->Titulo, $materiales, $materialesAport);
+    $this->view->MostrarMatAportados($this->Titulo, $materiales, $materialesAport,$activo);
   }
 
   function addImages($id){
