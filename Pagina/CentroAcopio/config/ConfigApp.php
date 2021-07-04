@@ -42,7 +42,9 @@ class ConfigApp
       'pedidos'=>'AdminController#GetPedidos',
       'ofertas'=>'CentroController#mostrarOfertas',
       'agregarOferta'=>'CentroController#agregarOferta',
-    ];
+      'Administrador'=> 'LoginController#MostrarLogin',    
+    
+  ];
 }
 
  ?>
