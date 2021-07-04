@@ -11,15 +11,23 @@ class CentroView
     $r = $this->Smarty->assign('root', "http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
   }
 
-  function Mostrar($Titulo, $Materiales){ //  DEJE ESTE COMO EJEMPLO POR SI NO RECUERDAN COMO ES
+  function Mostrar($Titulo, $Materiales,$oferta){ //  DEJE ESTE COMO EJEMPLO POR SI NO RECUERDAN COMO ES
     $this->Smarty->assign('Titulo',$Titulo);
     $this->Smarty->assign('materiales',$Materiales);
+    $this->Smarty->assign('ofertas',$oferta);
     $this->Smarty->display('templates/home.tpl');
   }
 
   public function MostrarOfertas($Titulo){
     $this->Smarty->assign('Titulo',$Titulo);
     $this->Smarty->display('templates/ofertas.tpl');
+  }
+
+  function getOfertas($Titulo, $Materiales,$Oferta){
+    $this->Smarty->assign('Titulo',$Titulo);
+    $this->Smarty->assign('materiales',$Materiales);
+    $this->Smarty->assign('ofertas',$Oferta);
+    $this->Smarty->display('templates/ofertashome.tpl');
   }
 
   public function MostrarUsuarios($Titulo,$cartoneros){

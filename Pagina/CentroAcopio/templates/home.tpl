@@ -9,5 +9,6 @@
     </p>
     </div>
 </div>
+{include file="ofertashome.tpl"}
 {include file="sectionMateriales.tpl"}
 {include file="footer.tpl"}
