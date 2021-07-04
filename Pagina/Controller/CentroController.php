@@ -36,7 +36,10 @@ class CentroController{
   }
 
   function MostrarOfertas(){
-    $this->view->MostrarOfertas($this->Titulo);
+    session_start();
+    $ofertas = $this->model->GetOfertas();
+    $id = $_SESSION["userId"];
+    $this->view->MostrarOfertas($this->Titulo, $ofertas, $id);
   }
 
   function MostrarBalanza(){
