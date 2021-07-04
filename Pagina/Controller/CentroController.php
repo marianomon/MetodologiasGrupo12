@@ -29,6 +29,10 @@ class CentroController{
     $this->view->MostrarHomeUsuario($this->Titulo,$Centro);
   }
 
+  function MostrarOfertas(){
+    $this->view->MostrarOfertas($this->Titulo);
+  }
+
   function MostrarBalanza(){
     $Materiales = $this->model->GetMateriales();
     $this->view->MostrarBalanza($this->Titulo, $Materiales);

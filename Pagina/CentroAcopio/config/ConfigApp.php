@@ -40,6 +40,7 @@ class ConfigApp
       'aceptarUsuario' => 'CentroController#aceptarUsuario',
       'editarUsuario' => 'CentroController#EditarUsuario',
       'pedidos'=>'AdminController#GetPedidos',
+      'ofertas'=>'CentroController#mostrarOfertas',
     ];
 }
 

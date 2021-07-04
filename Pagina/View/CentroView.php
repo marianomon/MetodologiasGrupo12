@@ -17,6 +17,11 @@ class CentroView
     $this->Smarty->display('templates/home.tpl');
   }
 
+  public function MostrarOfertas($Titulo){
+    $this->Smarty->assign('Titulo',$Titulo);
+    $this->Smarty->display('templates/ofertas.tpl');
+  }
+
   public function MostrarUsuarios($Titulo,$cartoneros){
     $this->Smarty->assign('Titulo',$Titulo);
     $this->Smarty->assign('cartoneros',$cartoneros);

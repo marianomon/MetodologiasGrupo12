@@ -4,7 +4,7 @@
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="generarPedidoRetiro">Retiros</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Ofertas</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="ofertas">Ofertas</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="LogOut">Salir</a></li>
                 </ul>
             </div>
