@@ -17,7 +17,13 @@ class CentroController{
 
   function Home(){
     $Centro = $this->model->GetMateriales();
-    $this->view->Mostrar($this->Titulo, $Centro);
+    $ofertas= $this->model->GetOfertas();
+    $this->view->Mostrar($this->Titulo,$Centro,$ofertas);
+  }
+  function ObtenerOfertas(){
+    $Centro = $this->model->GetMateriales();
+    $ofertas= $this->model->GetOfertas();
+    $this->view->getOfertas($this->Titulo,$Centro,$ofertas);
   }
 
   function PedidoDeRetiro(){

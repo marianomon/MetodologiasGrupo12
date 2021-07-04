@@ -17,6 +17,12 @@ class CentroModel
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  function GetOfertas(){
+    $sentencia = $this->db->prepare( "select * from oferta");
+    $sentencia->execute();
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
   function GetCartoneros(){
     $sentencia = $this->db->prepare( "select * from usuario where isAdm= -1 ");
     $sentencia->execute();
