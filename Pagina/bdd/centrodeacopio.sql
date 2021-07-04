@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-06-2021 a las 01:17:41
+-- Tiempo de generación: 03-07-2021 a las 23:14:04
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
@@ -60,7 +60,8 @@ INSERT INTO `materiales` (`id_material`, `nombre`, `descripcion`) VALUES
 (3, 'Envases Plasticos', 'Deben estar limpios y aplastados.'),
 (4, 'Botellas de Vidrio', 'Deben estar secas y limpias.'),
 (5, 'Latas de Aluminio y de Conserva', 'Deben estar secas, limpias y aplastadas.'),
-(6, 'Tetrabrik', 'Deben estar limpios y aplastados.');
+(6, 'Tetrabrik', 'Deben estar limpios y aplastados.'),
+(10, 'Papel', 'Debe estar seco, limpio y apilado. ');
 
 -- --------------------------------------------------------
 
@@ -72,6 +73,33 @@ CREATE TABLE `materialesrecogidos` (
   `idMaterial` int(11) NOT NULL,
   `idUsuario` int(11) NOT NULL,
   `cantidad` decimal(10,0) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `materialesrecogidos`
+--
+
+INSERT INTO `materialesrecogidos` (`idMaterial`, `idUsuario`, `cantidad`) VALUES
+(2, 1, '300'),
+(5, 31, '300'),
+(4, 31, '300'),
+(5, 31, '90'),
+(5, 31, '68'),
+(2, 31, '98'),
+(4, 31, '999');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `oferta`
+--
+
+CREATE TABLE `oferta` (
+  `id_oferta` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `zonaGeografica` text NOT NULL,
+  `espacio` int(11) NOT NULL,
+  `texto` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -124,9 +152,7 @@ INSERT INTO `usuario` (`id_usuario`, `nombre`, `contraseña`, `email`, `direccio
 (1, 'Mariano', '$2y$10$.8YcAbmR8ewzTu3s1ekctOdfFw82un.jfGMfIuOsTNiXlnvUq.jYi', 'marian@gmail.com', 'brasil 1982', 2147483647, 1, '', 0, '0000-00-00', 'montero', 0, 0),
 (8, 'ivan', '$2y$10$L2NhaeAc8oAQ2o76dHGP7eOnjsdWVVmg32QXzxsyw29s3fSWLdVs6', 'ivan@gmail.com', 'Basilico 1740', 2147483647, 1, '', 0, '0000-00-00', 'Samudio', 0, 0),
 (9, 'Lina', '$2y$10$d96ACd1aVIm4.Bs6XEj09O1diXIG3v7iqxqhNAShbTV9ihTOHMasq', 'secretaria@gmail.com', 'el paso 125', 257368989, 0, '', 12345678, '0000-00-00', 'lasecretaria', 1, 0),
-(11, 'jesu', '$2y$10$fQJ83bSMpRaUqKhL3llVbOUwgRlwWqTZfzUiBdqg8liQq.VVZjAsG', '', 'venezuela', 0, 0, '', 0, '2000-07-22', 'locss', -1, 0),
-(12, 'jesu', '$2y$10$vqpp58Jqhq8jpDIJLqkz/OC4tX9ZzUwYNRaHu9773zuprSZMLT84S', '', 'venezuela', 0, 0, '', 0, '2000-07-22', 'locss', -1, 0),
-(13, 'jesu', '$2y$10$2tb9KE3zWGs6r4oo/7Ia.eL0Lh8yhjFT6icAhpJ6a2cwRWaT9ZbHO', '', 'venezuela', 0, 0, '', 41099436, '2000-07-22', 'locss', -1, 0);
+(31, 'pepe', '$2y$10$n1A511vhdf1F09f5hBcyPuu7CSpH1iqtDXvNf39PnKd/4EHQzw.A2', '', 'Street 103', 0, 0, '', 87654321, '2000-01-30', 'Hernandez', -1, 1);
 
 --
 -- Índices para tablas volcadas
@@ -152,6 +178,13 @@ ALTER TABLE `materialesrecogidos`
   ADD KEY `idUsuario` (`idUsuario`);
 
 --
+-- Indices de la tabla `oferta`
+--
+ALTER TABLE `oferta`
+  ADD PRIMARY KEY (`id_oferta`),
+  ADD KEY `id_usuario` (`id_usuario`);
+
+--
 -- Indices de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
@@ -172,7 +205,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `materiales`
 --
 ALTER TABLE `materiales`
-  MODIFY `id_material` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_material` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT de la tabla `oferta`
+--
+ALTER TABLE `oferta`
+  MODIFY `id_oferta` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `pedidos`
@@ -184,7 +223,7 @@ ALTER TABLE `pedidos`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_usuario` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- Restricciones para tablas volcadas
@@ -202,6 +241,12 @@ ALTER TABLE `imagen`
 ALTER TABLE `materialesrecogidos`
   ADD CONSTRAINT `materialesrecogidos_ibfk_1` FOREIGN KEY (`idMaterial`) REFERENCES `materiales` (`id_material`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `materialesrecogidos_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `oferta`
+--
+ALTER TABLE `oferta`
+  ADD CONSTRAINT `oferta_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `pedidos`
