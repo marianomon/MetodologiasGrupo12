@@ -54,10 +54,8 @@ class LoginController {
     }
 
     public function logCartonero(){
-        $password = $_POST['password'];
         $usuario = $this->model->GetPasswordCartonero($_POST['dni']);
-        echo(password_verify($password,$usuario->contraseña));
-        if (isset($usuario) && password_verify($password,$usuario->contraseña)){
+        if (isset($usuario)){
             session_start();
             $_SESSION['dni'] = $usuario->dni;
             $_SESSION['userId'] = $usuario->id_usuario;

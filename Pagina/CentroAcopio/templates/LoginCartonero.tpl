@@ -9,8 +9,6 @@
                  <h2 class="text-info">Ingrese sus datos</h2>
                 </div>
                 <div class="form-group"><label>DNI</label><input class="form-control"  id="dni" name="dni" placeholder="DNI" type="text"/></div>
-                <div class="form-group"><label for="password">Password</label>  
-                <input class="form-control" type="password" id="password" name="password" placeholder="password" /></div>
                 <div class="form-group"></div>
                 <button class="btn btn-primary btn-block" value="logCartonero"  type="submit">Entrar</button>
             </form>
