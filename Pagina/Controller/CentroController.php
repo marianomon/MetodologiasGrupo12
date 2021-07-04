@@ -40,13 +40,23 @@ class CentroController{
   }
 
   function MostrarBalanza(){
+    $activo = false;
+    session_start();
+    if(isset($_SESSION["userId"])){
+      $activo = true;
+    }
     $Materiales = $this->model->GetMateriales();
-    $this->view->MostrarBalanza($this->Titulo, $Materiales);
+    $this->view->MostrarBalanza($this->Titulo, $Materiales,$activo);
   }
 
   function SubirBalanza(){
     session_start();
-    $id = $_SESSION["userId"];
+    if(isset($_SESSION["userId"])){
+      $id = $_SESSION["userId"];
+    }else{
+      $user = $this->model->getAdmin();
+      $id= $user["id_usuario"];
+    }
     $material = $_POST["material"];
     $peso = $_POST['kg'];
     $this->model->AgregarMaterialBalanza($material,$peso, $id);

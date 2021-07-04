@@ -58,8 +58,9 @@ class CentroView
     $this->Smarty->display('templates/materialesAdmin.tpl');
   }
 
-  public function MostrarBalanza($Titulo, $Materiales){
+  public function MostrarBalanza($Titulo, $Materiales,$activo){
     $this->Smarty->assign('Titulo', $Titulo);
+    $this->Smarty->assign('Activo', $activo);
     $this->Smarty->assign('materiales',$Materiales);
     $this->Smarty->display('templates/Balanza.tpl');
   }
