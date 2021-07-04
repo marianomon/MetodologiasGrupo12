@@ -16,6 +16,18 @@ body{
   margin-bottom: 40px;
 }
 
+.ofertasAbiertas{
+  margin-bottom: 10% !important;
+  text-align: center;
+  
+}
+
+.ofertasAbiertas td{
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-bottom: 10px;
+}
+
 .contenedorRadio input{
   width: auto !important;
   margin-bottom:initial !important;

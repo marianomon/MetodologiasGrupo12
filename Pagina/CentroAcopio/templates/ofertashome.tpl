@@ -24,7 +24,7 @@
               <td>Un camion</td>
             {/if}
              <td>{$oferta['texto']}</td>
-            <td><a class = "btn btn-outline-danger" href="Login">Ver</a></td>      
+            <td><a class = "btn btn-outline-danger" href="Login">Ver</a></td>
     </tr>
     {/foreach}
   </tbody>  
