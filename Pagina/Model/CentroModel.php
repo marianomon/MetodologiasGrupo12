@@ -49,6 +49,11 @@ class CentroModel
     $sentencia->execute(array($material,$peso, $id));
   }
 
+  function AgregarOferta($id,$zona,$texto,$espacio){
+    $sentencia = $this->db->prepare("INSERT INTO `oferta`(`id_usuario`, `zonaGeografica`, `espacio`, `texto`) VALUES (?,?,?,?)");
+    $sentencia->execute(array($id,$zona,$espacio,$texto));
+  }
+
   function GetMaterialesAportados($id){
     $sentencia = $this->db->prepare( "select * from materialesrecogidos WHERE idUsuario = ?");
     $sentencia->execute(array($id));

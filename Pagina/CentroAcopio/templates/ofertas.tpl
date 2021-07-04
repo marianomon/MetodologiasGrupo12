@@ -10,20 +10,20 @@
         <div class="contenedorRadio">
           <h3>¿Cuanto espacio disponible tenes?</h3>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1" name="espacio">
+            <input class="form-check-input" type="radio" name="espacio" checked="checked" id="inlineRadio1" value="1" >
             <label class="form-check-label" for="inlineRadio1">Una caja</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2" name="espacio">
+            <input class="form-check-input" type="radio" name="espacio" id="inlineRadio2" value="2" >
             <label class="form-check-label" for="inlineRadio2">El baul de un auto</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="3" name="espacio">
-            <label class="form-check-label" for="inlineRadio2">Una caja de una camioneta</label>
+            <input class="form-check-input" type="radio" name="espacio" id="inlineRadio3" value="3" >
+            <label class="form-check-label" for="inlineRadio3">Una caja de una camioneta</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="4" name="espacio">
-            <label class="form-check-label" for="inlineRadio2">Un camion</label>
+            <input class="form-check-input" type="radio" name="espacio" id="inlineRadio4" value="4" >
+            <label class="form-check-label" for="inlineRadio4">Un camion</label>
           </div>
         </div>
         <button type="submit" class="btn btn-success mb-3">Agregar</button>
