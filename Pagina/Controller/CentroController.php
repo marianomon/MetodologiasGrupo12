@@ -35,10 +35,18 @@ class CentroController{
     $this->view->MostrarHomeUsuario($this->Titulo,$Centro);
   }
 
+  function postularse(){
+    session_start();
+    $id = $_SESSION["userId"];
+    $idOferta = $_POST["idOferta"];
+    $this->model->postularse($id, $idOferta);
+    header('Location: ' . ofertas);
+  }
+
   function MostrarOfertas(){
     session_start();
-    $ofertas = $this->model->GetOfertas();
     $id = $_SESSION["userId"];
+    $ofertas = $this->model->GetOfertasSelect($id);
     $this->view->MostrarOfertas($this->Titulo, $ofertas, $id);
   }
 
