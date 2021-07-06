@@ -18,9 +18,10 @@ class CentroView
     $this->Smarty->display('templates/home.tpl');
   }
 
-  public function MostrarOfertas($Titulo, $Oferta, $id){
+  public function MostrarOfertas($Titulo, $Oferta, $id, $Postulante){
     $this->Smarty->assign('Titulo',$Titulo);
     $this->Smarty->assign('ofertas',$Oferta);
+    $this->Smarty->assign('postulantes',$Postulante);
     $this->Smarty->assign('id',$id);
     $this->Smarty->display('templates/ofertas.tpl');
   }

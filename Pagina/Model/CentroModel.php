@@ -23,8 +23,21 @@ class CentroModel
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  function GetOfertasSelect($id){
-    $sentencia = $this->db->prepare( "select * from oferta where id_oferta !=?");
+  function GetOfertasSelect(){
+    $sentencia = $this->db->prepare( "select * from oferta");
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  function BorrarPostulacion($param){
+    $sentencia = $this->db->prepare("DELETE from postulantes where idOferta=?");
+    $sentencia->execute(array($param));
+  }
+
+  function GetPostulantes($id){
+    $sentencia = $this->db->prepare( "SELECT usuario.nombre,usuario.apellido,usuario.direccion
+                                      FROM postulantes AS p
+                                      INNER JOIN oferta ON oferta.id_usuario=? AND oferta.id_oferta=p.idOferta
+                                      INNER JOIN usuario ON usuario.id_usuario=p.idUsuario;");
     $sentencia->execute(array($id));
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }

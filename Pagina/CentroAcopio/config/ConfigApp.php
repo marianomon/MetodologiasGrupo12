@@ -43,6 +43,7 @@ class ConfigApp
       'ofertas'=>'CentroController#mostrarOfertas',
       'agregarOferta'=>'CentroController#agregarOferta',
       'postular' => 'CentroController#postularse',
+      'aceptarPostulacion' => 'CentroController#aceptarPostulacion'
     ];
 }
 

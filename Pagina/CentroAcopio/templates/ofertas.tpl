@@ -31,6 +31,53 @@
     </form>
   </div>
   <div class="row justify-content-md-center">
+   <div class="col-10 ">
+      <h2 class="titTabla">Mis Ofertas abiertas:</h2>
+      <table class="table-dark table-striped tablaMateriales ofertasAbiertas">
+        <tbody>
+        <td>Zona</td>
+        <td>Espacio</td>
+        <td>Descripcion</td>
+          {foreach from=$ofertas item=oferta}
+            {if $oferta['id_usuario'] eq $id}
+              <form action="aceptarPostulacion" method="post">
+                <input type="number" class="form-control idMaterial" name="idOferta" value="{$oferta['id_oferta']}">
+                <tr>
+                  <td>{$oferta['zonaGeografica']}</td>
+                  {if $oferta['espacio'] eq 1}
+                      <td>Una caja</td>
+                  {elseif $oferta['espacio'] eq 2}
+                    <td>Baul en un auto</td>
+                  {else if $oferta['espacio'] eq 3}
+                    <td>La caja de una camioneta</td>
+                  {else}
+                    <td>Un camion</td>
+                  {/if}
+                    <td>{$oferta['texto']}</td>
+                </tr>
+              </form>
+              <td  class="espaciado" colspan="4">Postulaciones:</td>
+            <tr>
+              <td>Nombre</td>
+              <td>Apellido</td>
+              <td>Direccion</td>
+              <td>Aceptar/Rechazar</td>
+            </tr>
+            {foreach from=$postulantes item=postulante}
+              <tr>
+                <td>{$postulante['nombre']}</td>
+                <td>{$postulante['apellido']}</td>
+                <td>{$postulante['direccion']}</td>
+                <td><a class="btn btn-outline-success" href="aceptarPostulacion/{$oferta['id_oferta']}">Aceptar</a> <a class="btn btn-outline-danger" href="rezchazarPostulacion/{$oferta['id_oferta']}">Rechazar</a></td>
+              </tr>
+            {/foreach}
+          {/if}
+        {/foreach}
+        </tbody>  
+      </table>
+    </div>
+    <br>
+    <br>
     <div class="col-10 ">
       <h2 class="titTabla">Ofertas abiertas:</h2>
       <table class="table-dark table-striped tablaMateriales ofertasAbiertas">

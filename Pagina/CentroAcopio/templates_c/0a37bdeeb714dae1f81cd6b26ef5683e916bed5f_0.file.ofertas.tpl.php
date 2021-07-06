@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2021-07-06 01:20:52
+/* Smarty version 3.1.33, created on 2021-07-06 03:05:11
   from 'C:\xampp\htdocs\Proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\ofertas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_60e393d4eb8ac9_72001980',
+  'unifunc' => 'content_60e3ac47f3f629_66786498',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a37bdeeb714dae1f81cd6b26ef5683e916bed5f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\ofertas.tpl',
-      1 => 1625527110,
+      1 => 1625533510,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60e393d4eb8ac9_72001980 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60e3ac47f3f629_66786498 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:navciudadano.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -58,6 +58,75 @@ $_smarty_tpl->_subTemplateRender("file:navciudadano.tpl", $_smarty_tpl->cache_id
     </form>
   </div>
   <div class="row justify-content-md-center">
+   <div class="col-10 ">
+      <h2 class="titTabla">Mis Ofertas abiertas:</h2>
+      <table class="table-dark table-striped tablaMateriales ofertasAbiertas">
+        <tbody>
+        <td>Zona</td>
+        <td>Espacio</td>
+        <td>Descripcion</td>
+          <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['ofertas']->value, 'oferta');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['oferta']->value) {
+?>
+            <?php if ($_smarty_tpl->tpl_vars['oferta']->value['id_usuario'] == $_smarty_tpl->tpl_vars['id']->value) {?>
+              <form action="aceptarPostulacion" method="post">
+                <input type="number" class="form-control idMaterial" name="idOferta" value="<?php echo $_smarty_tpl->tpl_vars['oferta']->value['id_oferta'];?>
+">
+                <tr>
+                  <td><?php echo $_smarty_tpl->tpl_vars['oferta']->value['zonaGeografica'];?>
+</td>
+                  <?php if ($_smarty_tpl->tpl_vars['oferta']->value['espacio'] == 1) {?>
+                      <td>Una caja</td>
+                  <?php } elseif ($_smarty_tpl->tpl_vars['oferta']->value['espacio'] == 2) {?>
+                    <td>Baul en un auto</td>
+                  <?php } elseif ($_smarty_tpl->tpl_vars['oferta']->value['espacio'] == 3) {?>
+                    <td>La caja de una camioneta</td>
+                  <?php } else { ?>
+                    <td>Un camion</td>
+                  <?php }?>
+                    <td><?php echo $_smarty_tpl->tpl_vars['oferta']->value['texto'];?>
+</td>
+                </tr>
+              </form>
+              <td  class="espaciado" colspan="4">Postulaciones:</td>
+            <tr>
+              <td>Nombre</td>
+              <td>Apellido</td>
+              <td>Direccion</td>
+              <td>Aceptar/Rechazar</td>
+            </tr>
+            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['postulantes']->value, 'postulante');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['postulante']->value) {
+?>
+              <tr>
+                <td><?php echo $_smarty_tpl->tpl_vars['postulante']->value['nombre'];?>
+</td>
+                <td><?php echo $_smarty_tpl->tpl_vars['postulante']->value['apellido'];?>
+</td>
+                <td><?php echo $_smarty_tpl->tpl_vars['postulante']->value['direccion'];?>
+</td>
+                <td><a class="btn btn-outline-success" href="aceptarPostulacion/<?php echo $_smarty_tpl->tpl_vars['oferta']->value['id_oferta'];?>
+">Aceptar</a> <a class="btn btn-outline-danger" href="rezchazarPostulacion/<?php echo $_smarty_tpl->tpl_vars['oferta']->value['id_oferta'];?>
+">Rechazar</a></td>
+              </tr>
+            <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+          <?php }?>
+        <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+        </tbody>  
+      </table>
+    </div>
+    <br>
+    <br>
     <div class="col-10 ">
       <h2 class="titTabla">Ofertas abiertas:</h2>
       <table class="table-dark table-striped tablaMateriales ofertasAbiertas">
