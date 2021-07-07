@@ -29,6 +29,17 @@ class CentroModel
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  function GetOfertasSelect($id){
+    $sentencia = $this->db->prepare( "select * from oferta where id_oferta !=?");
+    $sentencia->execute(array($id));
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  function postularse($id, $idOferta){
+    $sentencia = $this->db->prepare("INSERT INTO `postulantes`( `idOferta`, `idUsuario`, `activo`) VALUES (?,?,?)");
+    $sentencia->execute(array($idOferta,$id, false));
+  }
+
   function GetCartoneros(){
     $sentencia = $this->db->prepare( "select * from usuario where isAdm= -1 ");
     $sentencia->execute();

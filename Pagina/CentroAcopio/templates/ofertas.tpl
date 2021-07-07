@@ -38,10 +38,11 @@
         <td>Zona</td>
         <td>Espacio</td>
         <td>Descripcion</td>
+        <td>Postulacion</td>
           {foreach from=$ofertas item=oferta}
             {if $oferta['id_usuario'] neq $id}
               <form action="postular" method="post">
-                <input type="number" class="form-control idMaterial" name="idOferta" value="$oferta['id_oferta']">
+                <input type="number" class="form-control idMaterial" name="idOferta" value="{$oferta['id_oferta']}">
                 <tr>
                   <td>{$oferta['zonaGeografica']}</td>
                   {if $oferta['espacio'] eq 1}
@@ -54,7 +55,7 @@
                     <td>Un camion</td>
                   {/if}
                     <td>{$oferta['texto']}</td>
-                  <td><a class = "btn btn-outline-danger" type="submit">Postularme</a></td>
+                  <td><button class="btn btn-outline-danger" id="btn-postular" type="submit">Postularme</button></td>
                 </tr>
               </form>
             {/if}
@@ -63,5 +64,6 @@
       </table>
     </div>
   </div>
+  
 
 {include file="footer.tpl"}

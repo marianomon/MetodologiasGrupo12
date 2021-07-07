@@ -44,8 +44,8 @@ class ConfigApp
       'agregarOferta'=>'CentroController#agregarOferta',
       'Administrador'=> 'LoginController#MostrarLogin',
       'Ciudadano'=> 'LoginController#MostrarLogin',     
-    
-  ];
+      'postular' => 'CentroController#postularse',
+    ];
 }
 
  ?>
