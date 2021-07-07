@@ -45,6 +45,7 @@ class ConfigApp
       'Administrador'=> 'LoginController#MostrarLogin',
       'Ciudadano'=> 'LoginController#MostrarLogin',     
       'postular' => 'CentroController#postularse',
+      'aceptarPostulacion' => 'CentroController#aceptarPostulacion'
     ];
 }
 

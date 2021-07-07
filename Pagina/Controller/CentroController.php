@@ -46,8 +46,9 @@ class CentroController{
   function MostrarOfertas(){
     session_start();
     $id = $_SESSION["userId"];
-    $ofertas = $this->model->GetOfertasSelect($id);
-    $this->view->MostrarOfertas($this->Titulo, $ofertas, $id);
+    $postulantes = $this->model->GetPostulantes($id);
+    $ofertas = $this->model->GetOfertas();
+    $this->view->MostrarOfertas($this->Titulo, $ofertas, $id, $postulantes);
   }
 
   function MostrarBalanza(){
@@ -58,6 +59,12 @@ class CentroController{
     }
     $Materiales = $this->model->GetMateriales();
     $this->view->MostrarBalanza($this->Titulo, $Materiales,$activo);
+  }
+
+  function aceptarPostulacion($param){
+    echo($param[0]);
+    $this->model->BorrarPostulacion($param[0]);
+    
   }
 
   function SubirBalanza(){
