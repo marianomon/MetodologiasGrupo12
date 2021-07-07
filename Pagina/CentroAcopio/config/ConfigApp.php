@@ -8,6 +8,7 @@ define('LOGIN', 'Location: http://'.$_SERVER["SERVER_NAME"] . ':'.$_SERVER['SERV
 define('LOGOUT', 'Location: http://'.$_SERVER["SERVER_NAME"] . ':'.$_SERVER['SERVER_PORT'] . dirname($_SERVER["PHP_SELF"]). '/LogOut');
 define('LISTAUSUARIOS', 'Location: http://'.$_SERVER["SERVER_NAME"] . ':'.$_SERVER['SERVER_PORT'] . dirname($_SERVER["PHP_SELF"]). '/mostrarUsuarios');
 define("PEDIDOS", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/pedidos');
+define('OFERT', 'Location: http://'.$_SERVER["SERVER_NAME"] . ':'.$_SERVER['SERVER_PORT'] . dirname($_SERVER["PHP_SELF"]). '/ofertas');
 
 class ConfigApp
 {
@@ -45,7 +46,8 @@ class ConfigApp
       'Administrador'=> 'LoginController#MostrarLogin',
       'Ciudadano'=> 'LoginController#MostrarLogin',     
       'postular' => 'CentroController#postularse',
-      'aceptarPostulacion' => 'CentroController#aceptarPostulacion'
+      'aceptarPostulacion' => 'CentroController#aceptarPostulacion',
+      'rechazarPostulacion' => 'CentroController#aceptarPostulacion'
     ];
 }
 

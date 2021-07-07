@@ -40,7 +40,7 @@ class CentroController{
     $id = $_SESSION["userId"];
     $idOferta = $_POST["idOferta"];
     $this->model->postularse($id, $idOferta);
-    header('Location: ' . ofertas);
+    header(OFERT);
   }
 
   function MostrarOfertas(){
@@ -62,9 +62,8 @@ class CentroController{
   }
 
   function aceptarPostulacion($param){
-    echo($param[0]);
     $this->model->BorrarPostulacion($param[0]);
-    
+    header(OFERT);
   }
 
   function SubirBalanza(){
@@ -88,7 +87,7 @@ class CentroController{
     $texto = $_POST['textoLibre'];
     $espacio = $_POST['espacio'];
     $this->model->AgregarOferta($id,$zona,$texto,$espacio);
-    header('Location: ' . ofertas);
+    header(OFERT);
   }
 
   function MostrarLoginCartonero(){

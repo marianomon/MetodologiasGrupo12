@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-07-2021 a las 23:14:04
+-- Tiempo de generación: 07-07-2021 a las 23:40:57
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
@@ -86,7 +86,9 @@ INSERT INTO `materialesrecogidos` (`idMaterial`, `idUsuario`, `cantidad`) VALUES
 (5, 31, '90'),
 (5, 31, '68'),
 (2, 31, '98'),
-(4, 31, '999');
+(4, 31, '999'),
+(6, 9, '800'),
+(2, 9, '700');
 
 -- --------------------------------------------------------
 
@@ -101,6 +103,18 @@ CREATE TABLE `oferta` (
   `espacio` int(11) NOT NULL,
   `texto` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `oferta`
+--
+
+INSERT INTO `oferta` (`id_oferta`, `id_usuario`, `zonaGeografica`, `espacio`, `texto`) VALUES
+(1, 1, 'Barrio terminal', 2, 'Estoy llevando cartones'),
+(2, 8, 'Villa Italia', 3, 'por favor cajas limpias'),
+(3, 31, 'Villa laza', 2, 'por favor cajas limpias'),
+(4, 31, 'Barrio Golf', 4, 'por favor cajas'),
+(5, 8, 'Barrio canada', 3, 'Cajas ordenandas'),
+(6, 8, 'Barrio procrear', 3, 'Empaquetado');
 
 -- --------------------------------------------------------
 
@@ -121,6 +135,27 @@ CREATE TABLE `pedidos` (
 INSERT INTO `pedidos` (`id_pedido`, `id_usuario`, `volumen`) VALUES
 (75, 1, 3),
 (76, 1, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `postulantes`
+--
+
+CREATE TABLE `postulantes` (
+  `idOferta` int(200) NOT NULL,
+  `idUsuario` int(200) NOT NULL,
+  `activo` tinyint(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `postulantes`
+--
+
+INSERT INTO `postulantes` (`idOferta`, `idUsuario`, `activo`) VALUES
+(1, 8, 0),
+(5, 1, 0),
+(6, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -192,6 +227,13 @@ ALTER TABLE `pedidos`
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
+-- Indices de la tabla `postulantes`
+--
+ALTER TABLE `postulantes`
+  ADD KEY `idOferta` (`idOferta`),
+  ADD KEY `idUsuario` (`idUsuario`);
+
+--
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
@@ -211,7 +253,7 @@ ALTER TABLE `materiales`
 -- AUTO_INCREMENT de la tabla `oferta`
 --
 ALTER TABLE `oferta`
-  MODIFY `id_oferta` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_oferta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `pedidos`
@@ -253,8 +295,15 @@ ALTER TABLE `oferta`
 --
 ALTER TABLE `pedidos`
   ADD CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `postulantes`
+--
+ALTER TABLE `postulantes`
+  ADD CONSTRAINT `postulantes_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `postulantes_ibfk_2` FOREIGN KEY (`idOferta`) REFERENCES `oferta` (`id_oferta`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

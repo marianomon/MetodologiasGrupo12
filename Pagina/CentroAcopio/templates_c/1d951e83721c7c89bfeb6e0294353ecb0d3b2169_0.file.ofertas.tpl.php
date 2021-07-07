@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2021-07-05 00:40:18
+/* Smarty version 3.1.33, created on 2021-07-07 23:12:48
   from 'C:\xampp\htdocs\proyectos\MetodologiasGrupo12\Pagina\CentroAcopio\templates\ofertas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_60e238d253d5c3_36974544',
+  'unifunc' => 'content_60e618d0554944_10746373',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1d951e83721c7c89bfeb6e0294353ecb0d3b2169' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\MetodologiasGrupo12\\Pagina\\CentroAcopio\\templates\\ofertas.tpl',
-      1 => 1625438413,
+      1 => 1625692360,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60e238d253d5c3_36974544 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60e618d0554944_10746373 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:navciudadano.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -58,8 +58,8 @@ $_smarty_tpl->_subTemplateRender("file:navciudadano.tpl", $_smarty_tpl->cache_id
     </form>
   </div>
   <div class="row justify-content-md-center">
-    <div class="col-10 ">
-      <h2 class="titTabla">Ofertas abiertas:</h2>
+   <div class="col-10 ">
+      <h2 class="titTabla">Mis Ofertas abiertas:</h2>
       <table class="table-dark table-striped tablaMateriales ofertasAbiertas">
         <tbody>
         <td>Zona</td>
@@ -70,9 +70,9 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['oferta']->value) {
 ?>
-            <?php if ($_smarty_tpl->tpl_vars['oferta']->value['id_usuario'] != $_smarty_tpl->tpl_vars['id']->value) {?>
-              <form action="postular" method="post">
-                <input type="number" class="form-control idMaterial" name="idOferta" value="$oferta['id_oferta']">
+            <?php if ($_smarty_tpl->tpl_vars['oferta']->value['id_usuario'] == $_smarty_tpl->tpl_vars['id']->value) {?>
+                <input type="number" class="form-control idMaterial" name="idOferta" value="<?php echo $_smarty_tpl->tpl_vars['oferta']->value['id_oferta'];?>
+">
                 <tr>
                   <td><?php echo $_smarty_tpl->tpl_vars['oferta']->value['zonaGeografica'];?>
 </td>
@@ -87,7 +87,72 @@ foreach ($_from as $_smarty_tpl->tpl_vars['oferta']->value) {
                   <?php }?>
                     <td><?php echo $_smarty_tpl->tpl_vars['oferta']->value['texto'];?>
 </td>
-                  <td><a class = "btn btn-outline-danger" type="submit">Postularme</a></td>
+                </tr>
+                  <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['postulantes']->value, 'postulante');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['postulante']->value) {
+?>
+                      <?php if ($_smarty_tpl->tpl_vars['postulante']->value['idOferta'] == $_smarty_tpl->tpl_vars['oferta']->value['id_oferta']) {?>
+                        <tr>
+                          <td  class="espaciado">Postulaciones:</td>
+                          <td><?php echo $_smarty_tpl->tpl_vars['postulante']->value['nombre'];?>
+</td>
+                          <td><?php echo $_smarty_tpl->tpl_vars['postulante']->value['apellido'];?>
+</td>
+                          <td><?php echo $_smarty_tpl->tpl_vars['postulante']->value['direccion'];?>
+</td>
+                          <td><a class="btn btn-outline-success" href="aceptarPostulacion/<?php echo $_smarty_tpl->tpl_vars['oferta']->value['id_oferta'];?>
+">Aceptar</a> <a class="btn btn-outline-danger" href="rechazarPostulacion/<?php echo $_smarty_tpl->tpl_vars['oferta']->value['id_oferta'];?>
+">Rechazar</a></td>
+                        </tr>
+                      <?php }?>
+                  <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+          <?php }?>
+        <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+        </tbody>  
+      </table>
+    </div>
+    <br>
+    <br>
+    <div class="col-10 ">
+      <h2 class="titTabla">Ofertas abiertas:</h2>
+      <table class="table-dark table-striped tablaMateriales ofertasAbiertas">
+        <tbody>
+        <td>Zona</td>
+        <td>Espacio</td>
+        <td>Descripcion</td>
+        <td>Postulacion</td>
+          <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['ofertas']->value, 'oferta');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['oferta']->value) {
+?>
+            <?php if ($_smarty_tpl->tpl_vars['oferta']->value['id_usuario'] != $_smarty_tpl->tpl_vars['id']->value && $_smarty_tpl->tpl_vars['oferta']->value['id_Postulado'] != $_smarty_tpl->tpl_vars['id']->value) {?>
+              <form action="postular" method="post">
+                <input type="number" class="form-control idMaterial" name="idOferta" value="<?php echo $_smarty_tpl->tpl_vars['oferta']->value['id_oferta'];?>
+">
+                <tr>
+                  <td><?php echo $_smarty_tpl->tpl_vars['oferta']->value['zonaGeografica'];?>
+</td>
+                  <?php if ($_smarty_tpl->tpl_vars['oferta']->value['espacio'] == 1) {?>
+                      <td>Una caja</td>
+                  <?php } elseif ($_smarty_tpl->tpl_vars['oferta']->value['espacio'] == 2) {?>
+                    <td>Baul en un auto</td>
+                  <?php } elseif ($_smarty_tpl->tpl_vars['oferta']->value['espacio'] == 3) {?>
+                    <td>La caja de una camioneta</td>
+                  <?php } else { ?>
+                    <td>Un camion</td>
+                  <?php }?>
+                    <td><?php echo $_smarty_tpl->tpl_vars['oferta']->value['texto'];?>
+</td>
+                  <td><button class="btn btn-outline-danger" id="btn-postular" type="submit">Postularme</button></td>
                 </tr>
               </form>
             <?php }?>
@@ -99,6 +164,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
       </table>
     </div>
   </div>
+  
 
 <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }

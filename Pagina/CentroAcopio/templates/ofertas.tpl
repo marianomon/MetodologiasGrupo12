@@ -40,7 +40,6 @@
         <td>Descripcion</td>
           {foreach from=$ofertas item=oferta}
             {if $oferta['id_usuario'] eq $id}
-              <form action="aceptarPostulacion" method="post">
                 <input type="number" class="form-control idMaterial" name="idOferta" value="{$oferta['id_oferta']}">
                 <tr>
                   <td>{$oferta['zonaGeografica']}</td>
@@ -55,22 +54,17 @@
                   {/if}
                     <td>{$oferta['texto']}</td>
                 </tr>
-              </form>
-              <td  class="espaciado" colspan="4">Postulaciones:</td>
-            <tr>
-              <td>Nombre</td>
-              <td>Apellido</td>
-              <td>Direccion</td>
-              <td>Aceptar/Rechazar</td>
-            </tr>
-            {foreach from=$postulantes item=postulante}
-              <tr>
-                <td>{$postulante['nombre']}</td>
-                <td>{$postulante['apellido']}</td>
-                <td>{$postulante['direccion']}</td>
-                <td><a class="btn btn-outline-success" href="aceptarPostulacion/{$oferta['id_oferta']}">Aceptar</a> <a class="btn btn-outline-danger" href="rezchazarPostulacion/{$oferta['id_oferta']}">Rechazar</a></td>
-              </tr>
-            {/foreach}
+                  {foreach from=$postulantes item=postulante}
+                      {if $postulante['idOferta'] eq $oferta['id_oferta']}
+                        <tr>
+                          <td  class="espaciado">Postulaciones:</td>
+                          <td>{$postulante['nombre']}</td>
+                          <td>{$postulante['apellido']}</td>
+                          <td>{$postulante['direccion']}</td>
+                          <td><a class="btn btn-outline-success" href="aceptarPostulacion/{$oferta['id_oferta']}">Aceptar</a> <a class="btn btn-outline-danger" href="rechazarPostulacion/{$oferta['id_oferta']}">Rechazar</a></td>
+                        </tr>
+                      {/if}
+                  {/foreach}
           {/if}
         {/foreach}
         </tbody>  
@@ -87,7 +81,7 @@
         <td>Descripcion</td>
         <td>Postulacion</td>
           {foreach from=$ofertas item=oferta}
-            {if $oferta['id_usuario'] neq $id}
+            {if $oferta['id_usuario'] neq $id && $oferta['id_Postulado'] neq $id}
               <form action="postular" method="post">
                 <input type="number" class="form-control idMaterial" name="idOferta" value="{$oferta['id_oferta']}">
                 <tr>

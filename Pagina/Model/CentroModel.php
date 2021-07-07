@@ -24,7 +24,9 @@ class CentroModel
   }
 
   function GetOfertas(){
-    $sentencia = $this->db->prepare( "select * from oferta");
+    $sentencia = $this->db->prepare( "SELECT oferta.* , postulantes.idUsuario AS id_Postulado
+    FROM oferta
+    LEFT JOIN postulantes ON postulantes.idOferta = oferta.id_oferta");
     $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
@@ -40,7 +42,7 @@ class CentroModel
   }
 
   function GetPostulantes($id){
-    $sentencia = $this->db->prepare( "SELECT usuario.nombre,usuario.apellido,usuario.direccion
+    $sentencia = $this->db->prepare( "SELECT p.idOferta,usuario.nombre,usuario.apellido,usuario.direccion
                                       FROM postulantes AS p
                                       INNER JOIN oferta ON oferta.id_usuario=? AND oferta.id_oferta=p.idOferta
                                       INNER JOIN usuario ON usuario.id_usuario=p.idUsuario;");

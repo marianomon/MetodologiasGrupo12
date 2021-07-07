@@ -17,9 +17,10 @@ body{
 }
 
 .espaciado{
-  background-color: rgba(59, 246, 137, 0.883) !important;
+  background-color: rgba(4, 122, 54, 0.883) !important;
   color: #000;
   font-size: larger;
+  width: 20%;
 }
 
 .ofertasAbiertas{
